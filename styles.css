@@ -1,0 +1,140 @@
+.container{
+    height: 5rem;
+}
+/*Nav Link Side Style*/
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+/*Nav Top Style*/
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.left-side{
+    display: flex;
+}
+
+.nav-link-wrapper{
+    margin-right: 50px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+    list-style-type: none; /* remove the bullets from the list */
+
+}
+li{
+    display: inline; /* make Home and About me in 1 line */
+}
+.nav-link-wrapper a{
+    color: #8a8a8a;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper a:hover{
+    color: black;
+}
+/* Portfolio Style*/
+.portfolio-items-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:20px;
+}
+.portfolio-item-wrapper{
+    position: relative;
+}
+.portfolio-img-background{
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.img-text-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.img-text-wrapper {
+    transition: 1s;
+    color: blue;
+    font-size: 40px;
+    text-decoration: none;
+}
+.img-text-wrapper a{
+    text-decoration: none;
+}
+.img-text-wrapper a:hover{
+    color: #ff9719;
+}
+
+.img-text-wrapper:hover .title{
+    font-weight:600;
+    color: #ff9719;
+    text-decoration: none;
+}
+.img-darken{
+    transition: 1s;
+    filter: brightness(10%);
+}
+
+
+
+
+
