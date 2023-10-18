@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkbox Trick</title>
+</head>
+<style>
+    /* Wenn die checkbox ist nicht checked, die div, die direkt nach der checkbox ist hier genannt.*/
+    /*wir mochten das Element, die Kind von dieser div ist => E>F*/
+.checkmark:not(:checked) + div  > .imageHBRS{
+    visibility: hidden;
+}
+#checkboxUbung2{
+    height: 20px;
+    width: 20px;
+}
+.ganzeImage{
+    border: 2px solid #000000;
+    padding: 5px;
+    height: auto;
+
+}
+.imageHBRS{
+    max-width: 99%;
+    max-height: 99%;
+    width: auto;
+    height: auto;
+    visibility: visible;
+}
+</style>
+<body>
+<div class="headline"><h1>Übung 2.2</h1></div>
+<div class="hide-and-show photo">
+    <input class ="checkmark" type="checkbox" id="checkboxUbung2" checked="checked" value="show"> hide and show wie checkbox
+    <div class="ganzeImage">
+    <img class="imageHBRS" src="https://www.h-brs.de/sites/default/files/styles/hresize699x466_32/public/paragraph_single_image/131007_hbrs_sta_088_0.jpg.webp?itok=zt0GsRsh&t=b207" alt="HBRS-image">
+    </div>
+</div>
+
+</body>
+</html>

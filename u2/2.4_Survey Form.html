@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+        body{
+            background-color:#a9d7d1;
+            text-align: center;
+            font-family: Roboto;
+            font-size: 16px;
+            color: black;
+        }
+
+        .container{
+            width: 85%;
+            height: 6%;
+            background-color: snow;
+            margin: auto;
+            padding: 15px;
+            border-radius : 25px 25px 0px 0px ;
+        }
+        .getInformationQuestion{
+            display: block;
+            padding-bottom: 20px;
+        }
+        .label-tab{
+            display: inline-block;
+            width: 44%;
+            text-align: right;
+            vertical-align: middle;/*design position von *Name in the middle with the input*/
+        }
+        .input {
+            text-align: left;
+            padding: 5px 2px;
+            width: 16rem ;
+        }
+        .question-tab{
+            display: inline-block;
+            width: 44%;
+            text-align: right;
+            vertical-align: top;/* position von question  in  top  im Vergleich zu answer (choices)*/
+        }
+
+        .answer{
+            display: inline-block;
+            text-align: left;
+            width: 54%;
+        }
+        .answer-choices{
+            display: inline-block;
+            text-align:left;
+            width: 54%;
+        }
+        .select-box{
+            padding: 5px 0px;
+            background-color: #f0f0f0;
+            width: 8rem ;
+        }
+    </style>
+</head>
+<body>
+<div class="headlineSurvey"><h1>Survey Form</h1></div>
+<section>
+    <div class="container">
+        <div id="goal">
+            <p>Let us know how we can improve freeCodeCamp</p>
+        </div>
+        <form id="survey-form">
+            <div>
+                <div class="getInformationQuestion">
+                    <div class="label-tab">
+                        <label>* Name:</label>
+                    </div>
+                    <div class="answer">
+                        <input class="input" type="text" name="Name" placeholder="Enter your name">
+                    </div>
+                </div>
+
+                <div class="getInformationQuestion">
+                    <div class="label-tab">
+                        <label>* Email:</label>
+                    </div>
+                    <div class="answer">
+                        <input class="input" type="email" name="Email" placeholder="Enter your Email">
+                    </div>
+                </div>
+
+                <div class="getInformationQuestion">
+                    <div class="label-tab">
+                        <label>* Age:</label>
+                    </div>
+                    <div class="answer">
+                        <input class="input" type="number" name="Age" placeholder="Age">
+                    </div>
+                </div>
+
+                <div class="getInformationQuestion">
+                    <div class="question-tab">
+                        <label>Which option best describes your current role?</label>
+                    </div>
+                    <div class="answer-choices">
+                        <select class="select-box">
+                            <option>Student</option>
+                            <option>Pupil</option>
+                            <option>Junior</option>
+                            <option>Master</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="getInformationQuestion">
+                    <div class="question-tab">
+                        <label>How likely is that you would recommend freeCodeCamp to a friend?</label>
+                    </div>
+                    <div class="answer">
+                        <div><input type="radio" name="suggest"><label>Definitely</label></div>
+                        <div><input type="radio" name="suggest"><label>Maybe</label></div>
+                        <div><input type="radio" name="suggest"><label>Not sure</label></div>
+                    </div>
+                </div>
+                <div class="getInformationQuestion">
+                    <div class="question-tab">
+                        <label>What do you like most in FCC:</label>
+                    </div>
+                    <div class="answer-choices">
+                        <select class="select-box">
+                            <option>Select an option</option>
+                            <option>Web Design</option>
+                            <option>JavaScript</option>
+                            <option>Data Visualization</option>
+                            <option>Database</option>
+                            <option>Back End Development</option>
+                            <option>Data Analysis</option>
+                            <option>Information Security</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="getInformationQuestion">
+                    <div class="question-tab">
+                        <label>Things that should be improved in the future (Check all that apply)</label>
+                    </div>
+                    <div class="answer">
+                        <div><input type="radio" name="suggest"><label>Front-end Projects</label></div>
+                        <div><input type="radio" name="suggest"><label>Back-end Projects</label></div>
+                        <div><input type="radio" name="suggest"><label>Data Visualization</label></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>
