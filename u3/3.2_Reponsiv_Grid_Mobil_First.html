@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung3.2</title>
+    <style>
+        @media screen  and (min-width: 240px){
+            body{
+                margin: 0;
+            }
+            .container{
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 10fr 1fr;
+                grid-template-areas: "header" "left" "center" "right";
+                height: 100vh;
+            }
+            .header {
+                background-color: #E62E2D;
+                grid-area: header;
+            }
+
+            .left {
+                background-color: #73EE2B;
+                grid-area: left;
+            }
+
+            .main {
+                background-color: #2734FF;
+                grid-area: center;
+            }
+
+            .right {
+                background-color: #E83EFF;
+                grid-area: right;
+            }
+
+        }
+        @media screen and (min-width: 600px) {
+            body {
+                margin: 1rem;
+            }
+
+            .container {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr 2fr;
+                grid-template-rows: 3fr 6fr 3fr;
+                grid-template-areas:"header header"
+                                    "left center"
+                                    "right right";
+                height: calc(100vh - 2rem);
+            }
+
+            .header {
+                background-color: #E62E2D;
+                grid-area: header;
+            }
+
+            .left {
+                background-color: #73EE2B;
+                grid-area: left;
+                margin-right: 0.5vw;
+                margin-bottom: 0.5vw;
+                margin-top: 0.5vw;
+            }
+
+            .main {
+                background-color: #2734FF;
+                grid-area: center;
+                margin-bottom: 0.5vw;
+                margin-top: 0.5vw;
+            }
+
+            .right {
+                background-color: #E83EFF;
+                grid-area: right;
+            }
+        }
+        /*Achtung: Die Eigenschaft wird von anderen fruher @media screen and (min-width: 600px) geerbt
+        => muss solcher Eigeschaft deaktivieren
+         */
+        @media screen and (min-width: 1200px) {
+            body {
+                margin: 2.5vw 3vw 2.5vw 3vw;
+            }
+
+            .container {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr 3fr 1fr;
+                grid-template-rows: 1fr 2fr;
+                grid-template-areas:
+            "header header header"
+            "left main right";
+                height: calc(100vh - 3vw);
+            }
+
+            .header {
+                background-color: #E62E2D;
+                grid-area: header;
+                margin-bottom: 1vw;
+            }
+
+            .left {
+                background-color: #73EE2B;
+                grid-area: left;
+                margin-right: 1vw;
+                margin-top: 0;
+
+            }
+
+            .main {
+                background-color: #2734FF;
+                grid-area: main;
+                margin-top: 0;
+            }
+
+            .right {
+                background-color: #E83EFF;
+                grid-area: right;
+                margin-left: 1vw;
+                margin-bottom: 0.5vw;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header"></div>
+    <div class="left"></div>
+    <div class ="main"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>
