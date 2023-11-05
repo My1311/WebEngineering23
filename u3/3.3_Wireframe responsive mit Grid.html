@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung3.3</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .container{
+        width: 100%;
+        overflow: hidden;
+        background-color: #363636;
+        display: flex;
+        justify-content: center;
+    }
+    nav ul li{
+        list-style: none;
+        display: inline-block;
+        padding: 10px 20px 10px;
+        align-items: center;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1rem;
+    }
+    nav ul li a:hover{
+        color: #F6DC3D ;
+    }
+    /*.content{
+        display: grid;
+        grid-template-columns: 3fr 5fr;
+        grid-template-rows: 1fr  6fr 3fr;
+        grid-template-areas: "header header" "left right" "footer footer";
+        height: calc(100vh - 40px);
+    }*/
+
+    .row{
+        display: flex;
+        width: 100%;
+        height: calc(80vh - 5rem);
+    }
+    .row-child{
+        /*This number is like a ratio comparing the widths of each child in the parent flex element. Since they are the same,
+         the available space will be divided up equally. And since we have two child elements, they will each take up 50%.*/
+        flex: 1;
+        margin: 10px;
+    }
+    .header{
+        text-align: center;
+        padding-top:  1rem;
+        padding-bottom:  0.5rem;
+    }
+    .js-photo{
+        display: flex;
+        justify-content: flex-end;
+    }
+    img{
+        border-radius: 6px;
+        border: black solid 1px;
+        width: 30vw;
+        margin-left: 15rem;
+        margin-right: 0;
+    }
+    .js-instructions{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 5rem 20rem 0 0;
+    }
+    .js-sentence{
+        padding-top: 1.5rem;
+        padding-bottom:1.5rem;
+    }
+    .btn{
+        width: 25rem;
+        height: 2rem;
+        background-color: #EC8D35;
+        color: #ffffff;
+        font-weight: bold;
+        border-radius:  6px;
+        border-color: #FD8944;
+        border-style: solid;
+        padding: 0 7rem;
+        cursor: pointer;
+        margin-bottom: 15px;
+    }
+    .btn:hover{
+        background-color: #F6DC3D ;
+    }
+    .btn2{
+        width: 30rem;
+    }
+    .footer{
+        height: 12vh;
+        bottom:0;
+        width: 100%;
+        text-align: center;
+        padding-top:  1rem;
+        overflow: hidden;
+        color: white;
+        background-color: #363636;
+    }
+    /* For desktop: */
+    @media only screen and (max-width: 640px) {
+        .content{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas: "header" "left" "right" "foot";
+        }
+        img{
+            height: 40vh;
+        }
+        .header{
+            grid-area: header;
+        }
+        .js-photo{
+            grid-area: left;
+        }
+        .js-instructions{
+            grid-area: right;
+        }
+        .footer{
+            grid-area: foot;
+        }
+    }
+
+</style>
+<body>
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="#">The book series</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">The Author</a></li>
+            <li><a href="#">Free resource</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="content">
+    <div class="header"><h1> You dont know JavaScript</h1></div>
+    <div class="row">
+        <div class="row-child js-photo ">
+            <img src ="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" alt="JS-photo"  >
+        </div>
+        <div class="row-child js-instructions">
+            <div class="js-sentence">Don't just drift through Javascript</div>
+            <div class="js-sentence">Understand how Javascript works</div>
+            <div class="js-sentence">Start your journey through the bumpy side of Javascript</div>
+            <button class="btn">ORDER YOUR COPY NOW</button>
+        </div>
+    </div>
+    <div class="footer ">
+        <p>The first ebook in the book series is absolutely free</p>
+        <button class="btn btn2">FIND OUT MORE ABOUT THIS OFFER</button>
+    </div>
+
+</div>
+</body>
+</html>
