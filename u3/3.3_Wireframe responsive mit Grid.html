@@ -30,50 +30,43 @@
     nav ul li a:hover{
         color: #F6DC3D ;
     }
-    /*.content{
+    .content{
         display: grid;
         grid-template-columns: 3fr 5fr;
-        grid-template-rows: 1fr  6fr 3fr;
+        grid-template-rows: auto  1fr auto;
         grid-template-areas: "header header" "left right" "footer footer";
         height: calc(100vh - 40px);
-    }*/
+    }
 
-    .row{
-        display: flex;
-        width: 100%;
-        height: calc(80vh - 5rem);
-    }
-    .row-child{
-        /*This number is like a ratio comparing the widths of each child in the parent flex element. Since they are the same,
-         the available space will be divided up equally. And since we have two child elements, they will each take up 50%.*/
-        flex: 1;
-        margin: 10px;
-    }
     .header{
         text-align: center;
         padding-top:  1rem;
         padding-bottom:  0.5rem;
+        grid-area: header;
+        letter-spacing: 0.1rem;
+        word-spacing: 0.2rem;
     }
     .js-photo{
+        grid-area: left;
         display: flex;
-        justify-content: flex-end;
+        align-items: flex-end;
     }
     img{
         border-radius: 6px;
         border: black solid 1px;
-        width: 30vw;
-        margin-left: 15rem;
-        margin-right: 0;
+        width: auto;
+        height: 70vh;
+        margin: 0 0 2rem 20rem;
     }
     .js-instructions{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        margin: 5rem 20rem 0 0;
+        grid-area: right;
+        margin: 5rem 0 0 0;
+        text-align: center;
     }
-    .js-sentence{
+    .js-instructions p{
         padding-top: 1.5rem;
         padding-bottom:1.5rem;
+        line-height: 200%;
     }
     .btn{
         width: 25rem;
@@ -103,6 +96,7 @@
         overflow: hidden;
         color: white;
         background-color: #363636;
+        grid-area: footer;
     }
     /* For desktop: */
     @media only screen and (max-width: 640px) {
@@ -143,22 +137,21 @@
 </div>
 <div class="content">
     <div class="header"><h1> You dont know JavaScript</h1></div>
-    <div class="row">
-        <div class="row-child js-photo ">
-            <img src ="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" alt="JS-photo"  >
-        </div>
-        <div class="row-child js-instructions">
-            <div class="js-sentence">Don't just drift through Javascript</div>
-            <div class="js-sentence">Understand how Javascript works</div>
-            <div class="js-sentence">Start your journey through the bumpy side of Javascript</div>
-            <button class="btn">ORDER YOUR COPY NOW</button>
-        </div>
+
+    <div class=" js-photo  left">
+        <img src ="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" alt="JS-photo">
     </div>
+    <div class="js-instructions right">
+        <p>Don't just drift through Javascript</p>
+        <p>Understand how Javascript works</p>
+        <p>Start your journey through the bumpy side of Javascript</p>
+        <button class="btn">ORDER YOUR COPY NOW</button>
+    </div>
+
     <div class="footer ">
         <p>The first ebook in the book series is absolutely free</p>
         <button class="btn btn2">FIND OUT MORE ABOUT THIS OFFER</button>
     </div>
-
 </div>
 </body>
 </html>
