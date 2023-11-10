@@ -108,6 +108,86 @@
             <!-- end of single question -->
         </div>
     </section>
+
+    <section class="question">
+        <div class ="title">
+            <h2>1.2 HTTP</h2>
+        </div>
+        <!-- questions -->
+        <div class="section-center">
+            <!-- single question -->
+            <article class="question">
+                <!-- question title -->
+                <div class="question-title">
+                    <p>1. Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?</p>
+                    <p>2. Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten?</p>
+                    <p>3. Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie dagegen tun?</p>
+                    <p>4. Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun? </p>
+                    <p>5. In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll.
+                     Aus Performancegründen soll die Abfrage aber cacheable sein. Wie könnten Sie dafür eine Lösung angehen?</p>
+                    <button type="button" class="question-btn">
+                <span class="plus-icon">
+                  <i class="far fa-plus-square"></i>
+                </span>
+                        <span class="minus-icon">
+                  <i class="far fa-minus-square"></i>
+                </span>
+                    </button>
+                </div>
+                <!-- answer text -->
+                <div class="answer-text">
+                    <p>1. Der HTTP-Statuscode <mark> 200 OK </mark>gibt an, dass eine Anfrage erfolgreich verlaufen ist.
+                        Eine 200-Antwort ist standardmäßig im Cache speicherbar.
+                        Unter dieser URL wurde eine valide Webseite gefunden.
+                    </p>
+                    <p>2. Code 301: Die URL wurde dauerhaft auf eine neue URL verschoben. </p>
+                    <p>3. Code 400: Der HTTP-Statuscode 400 Bad Request gibt an, dass der Server die Anfrage nicht verarbeiten kann,
+                        weil anscheinend ein clientseitiger Fehler geschehen ist (z.B. eine syntaktisch falsche Anfrage).
+                        Der Client sollte diese Anfrage nicht unmodifiziert wiederholen.</p>
+                    <p>4. Code 403: Der HTTP 403 Forbidden Statuscode zeigt an, dass der Server die Anfrage zwar verstanden hat, aber sich weigert, sie zuzulassen.</p>
+                    <p>5. OPTIONS-Anfrage ist nicht cacheable. </p>
+                </div>
+            </article>
+            <!-- end of single question -->
+        </div>
+    </section>
+
+    <section class="question">
+        <div class ="title">
+            <h2>1.3 Quiz zu HTML</h2>
+        </div>
+        <div class="content">
+            <div class="question-and-answer">
+                <fieldset style="border: 1px black solid">
+                    <legend>Frage1/6: Was ist HTML?</legend>
+                    <input class ="checkmark" type="radio"  checked="checked"> eine Auszeichnungssprache <br/>
+                </fieldset>
+                <fieldset style="border: 1px black solid">
+                    <legend>Frage2/6: Wofür steht HTML?</legend>
+                    <input class ="checkmark" type="radio"  checked="checked"> Hypertext Markup Language <br/>
+                </fieldset>
+                <fieldset style="border: 1px black solid">
+                    <legend>Frage3/6: Wofür wird HTML eingesetzt?</legend>
+                    <input class ="checkmark" type="radio"  checked="checked"> für die Strukturierung digitaler Dokumente <br/>
+                </fieldset>
+                <fieldset style="border: 1px black solid">
+                    <legend>Frage4/6: Wer hat HTML erfunden?</legend>
+                    <input class ="checkmark" type="radio"  checked="checked"> Tim Berners-Lee <br/>
+                </fieldset>
+                <fieldset style="border: 1px black solid">
+                    <legend>Frage5/6: Zu welchem ursprünglichen Zweck wurde HTML erfunden?</legend>
+                    <input class ="checkmark" type="radio"  checked="checked">für den Austausch wissenschaftlicher Publikationen<br/>
+                </fieldset>
+                <fieldset style="border: 1px black solid">
+                    <legend>Frage6/6: Wer arbeitet alles an der Weiterentwicklung von HTML?</legend>
+                    <input class ="checkmark" type="radio"  checked="checked"> die Web Hypertext Application Technology Working Group (WHATWG)<br/>
+                    <input class ="checkmark" type="radio"  checked="checked"> das World Wide Web Consortium (W3C)<br/>
+                </fieldset>
+            </div>
+        </div>
+
+    </section>
+
 </main>
 <script src="app.js"></script>
 
