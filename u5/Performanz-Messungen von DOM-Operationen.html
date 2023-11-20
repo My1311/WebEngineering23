@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 5.1</title>
+    <style>
+        th, td {
+            border: 2px solid;
+        }
+    </style>
+</head>
+<body>
+<h1>5.1. Performanz-Messungen von DOM-Operationen</h1>
+<p>Vergleichstabelle</p>
+<table>
+    <tr>
+        <th>Funktionen</th>
+        <th>Zeitdauer zum Ausführen</th>
+    </tr>
+    <tr>
+        <td><p id="innerHTMLTest">innerHTML</p></td>
+        <td><p id="innerHTMLResult"></p></td>
+    </tr>
+
+    <tr>
+        <td><p id="innerTextTest">innerText</p></td>
+        <td><p id="innerTextResult"></p></td>
+    </tr>
+
+    <tr>
+        <td><p id="textContentTest">textContent</p></td>
+        <td><p id="textContentResult"></p></td>
+    </tr>
+
+    <tr>
+        <td><p id="outerHTMLTest">outerHTML</p></td>
+        <td><p id="outerHTMLResult"></p></td>
+    </tr>
+</table>
+
+<script>
+    // 4 Fuktionen schreiben
+    // Die Eingangszeit in performance.now() speichern
+    // In jeder Fkt geben wir die aktuelle Zeit minus die Eingangszeit zurück
+
+   function innerHTMLFunction(){
+        const innerHtmlStart = performance.now();
+        document.getElementById("innerHTMLTest").innerHTML = "probieren";
+        return performance.now() - innerHtmlStart;
+    }
+
+    function innerTextFunction(){
+        const innerTextStart = performance.now();
+        document.getElementById("innerTextTest").innerText = "probieren";
+        return performance.now() - innerTextStart;
+    }
+
+    function textContentFunction(){
+        const textContentStart = performance.now();
+        document.getElementById("textContentTest").textContent = "probieren";
+        return performance.now() - textContentStart;
+    }
+    // Bei 1.Mal ersetzt die outerHTMLFunction() schon das ganze Element <p id="outerHTMLTest">outerHTML</p> zu "probieren".
+    // Bei 2. Mal findet er nicht mehr das Element <p .....></p>.... =>Fehler!
+    // outerHTML überschreibt das Element, während innerHTML alle Kinder, aber nicht das Element selber ersetzt.
+    function outerHTMLFunction(){
+        const outerHtmlStart = performance.now();
+        document.getElementById("outerHTMLTest").outerHTML = "<p id=\"outerHTMLTest\">probieren</p>";
+        return performance.now() - outerHtmlStart;
+    }
+
+    // die Funktion vorher 1000 mal als Warmstart durchführen
+    // die Mittel von 100000 Durchläufe jeder Funktion berechnen
+    function durationMessen(func) {
+        let summe = 0;
+        for(var i=0; i<1000; i++){
+            func();
+        }
+        for(var i=0; i < 100000; i++){
+            summe+=func();
+        }
+        return summe/100000;
+
+    }
+    // Ergebnisse ausdrücken
+
+
+
+    document.getElementById("innerHTMLResult").innerHTML= durationMessen(()=>innerHTMLFunction());
+    document.getElementById("innerTextResult").innerHTML= durationMessen(()=>innerTextFunction());
+    document.getElementById("textContentResult").innerHTML= durationMessen(()=>textContentFunction());
+    document.getElementById("outerHTMLResult").innerHTML= durationMessen(()=>outerHTMLFunction());
+
+    document.getElementById("innerHTMLTest").innerHTML="innerHTML";
+    document.getElementById("innerTextTest").innerHTML="innerText";
+    document.getElementById("textContentTest").innerHTML="textContent";
+    document.getElementById("outerHTMLTest").innerHTML="outerHTML";
+
+</script>
+</body>
+</html>
