@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #add-speaker-container{
+            white-space: nowrap;
+        }
+        #speaker-name, input, #add-speaker {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<h1>Rednerliste</h1>
+<div id="add-speaker-container">
+    <p id="speaker-name">Neuer Redner:</p>
+    <input type="text" placeholder="Enter Name..." id="input">
+    <button id = "add" onclick="addSpeaker()">Hinzufügen</button>
+</div>
+<ul id="speaker-container"></ul>
+
+<script>
+    function formatTime(seconds, minuten, hours) {
+        let viewSeconds, viewMinuten, viewHours;
+        if(seconds < 10){
+            viewSeconds = "0" + seconds;
+        } else{
+            viewSeconds = "" + seconds;
+        }
+        if(minuten < 10){
+            viewMinuten = "0" + minuten;
+        }else{
+            viewMinuten ="" + minuten;
+        }
+        if(hours < 10){
+            viewHours = "0" + hours;
+        }else{
+            viewHours = "" + hours;
+        }
+        return  viewHours + ":" + viewMinuten + ":" + viewSeconds;
+    }
+    // Method for increasing the time every second (like a stop watch)
+    function createInterval(timeSpan, index) {
+        return setInterval(function (){
+            speaker[index].seconds++;
+            if(speaker[index].seconds === 60){
+                speaker[index].minuten++;
+                speaker[index].seconds = 0;
+            }
+            if(speaker[index].minuten == 60){
+                speaker[index].hours++;
+                speaker[index].minuten = 0;
+            }
+
+            timeSpan.innerHTML = formatTime(speaker[index].seconds, speaker[index].minuten, speaker[index].hours);
+        }, 1000);
+    }
+
+    class Speaker{
+
+        constructor(name, hour, minute, second, button, index) {
+            this.name = name;
+            this.hours = hour;
+            this.minuten = minute;
+            this.seconds = second;
+            this.index = index;
+            this.spanTime = document.createElement('span');
+            this.spanTime.innerHTML = formatTime(this.seconds, this.minuten, this.hours);
+            this.spanTime.setAttribute("id", "time" + this.index);
+            this.button = button;
+            this.button.addEventListener("click", () => startStop(button, this.index));
+            this.button.innerHTML = "Stopp!";
+            this.button.setAttribute("id", "startStopButton" + this.index);
+            this.interval = createInterval(this.spanTime, this.index);
+        }
+        appendAll(){
+            let listItemElement = document.createElement('li');
+            listItemElement.append(this.name, " ", this.spanTime, " ", this.button);
+            return listItemElement;
+        }
+    }
+
+    let speaker = [];
+    let speakerIndex = 0;
+    document.getElementById('input').addEventListener("keyup",(key) => {
+        if(key.key === 'Enter'){
+            addSpeaker();
+        }
+    })
+
+    function addSpeaker() {
+        const speakerName = document.getElementById('input');
+        if(speakerName.value !== ''){
+            speaker[speakerIndex] = new Speaker(speakerName.value, 0, 0, 0, document.createElement('button'),speakerIndex);
+            document.getElementById('speaker-container').appendChild(speaker[speakerIndex].appendAll());
+            speakerIndex++;
+            speakerName.value = '';
+            stopAllButThis(speakerIndex - 1);
+        }
+
+    }
+
+    function startStop(element, index) {
+        if(element.innerHTML === 'Stopp!'){
+            element.innerHTML = 'Start!';
+            // stop time-increasing method.
+            clearInterval(speaker[index].interval);
+        }else{
+            element.innerHTML = 'Stopp!';
+            // create time-increasing method.
+            speaker[index].interval = createInterval(speaker[index].spanTime, index)
+            stopAllButThis(index)
+        }
+    }
+
+    function stopAllButThis(speakerIndex) {
+        for (let i = 0; i < speaker.length; i++) {
+            if(i !==speakerIndex) {
+                clearInterval(speaker[i].interval);
+                document.getElementById("startStopButton" + i).innerHTML ="Start!";
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
