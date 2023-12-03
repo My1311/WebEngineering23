@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topologische Iterierbarkeit</title>
+</head>
+<body>
+  <h1>Geben Sie bitte eine Vorrangrelationen in dieser Schreibweise  :<br>
+    schlafen,studieren,essen,studieren,studieren,prüfen</h1>
+  <br>
+
+
+  <textarea id="textarea" rows="4" cols="50" placeholder="Schreiben Sie Ihren Text und verwenden Sie bitte einige verschachtelte Klammern">
+  </textarea>
+
+  <button class="button" onclick = check() >check Text</button>
+  <br>
+  <textarea id="textarea2" rows="4" cols="50" placeholder="Dein Ergebnis">
+  </textarea>
+<script>
+  function topsort(array) {
+
+    var Knoten = [];
+    var pack = [];
+    var gesehen = [];
+
+    for (var k = 0; k < array.length; k++) {
+      if (Knoten.indexOf(array[k][0]) < 0) Knoten.push(array[k][0]);
+      if (Knoten.indexOf(array[k][1]) < 0) Knoten.push(array[k][1]);
+    }
+
+    Knoten.forEach(function (knote) {
+      if (gesehen.indexOf(knote) < 0) {
+        sort(knote);
+      }
+    });
+
+    function sort(knote) {
+      gesehen.push(knote);
+      array.forEach(function (Kante) {
+        if (gesehen.indexOf(Kante[1]) < 0 && Kante[0] == knote) {
+          sort(Kante[1]);
+        }
+      });
+      pack.push(knote);
+    }
+    return pack.reverse();
+  }
+
+  class Vorrang {
+    [Symbol.iterator]() {
+      return this.array.values();
+    }
+    constructor(array) {
+      this.array = topsort(array);
+    }
+  }
+
+
+  function check() {
+    try {
+
+      var text= document.getElementById("textarea").value;
+      console.log(text);
+
+      var array = text.split(",").map(String);
+      if ((array.length % 2) != 0) {
+        throw new Error(' Geben Sie bitte eine komplette Vorrangrelationen!');
+      }
+
+      var gfg = new Array(array.length / 2);
+
+
+      // Loop to create 2D array using 1D array
+      for (var i = 0; i < gfg.length; i++) {
+        gfg[i] = new Array(2);
+      }
+
+      var h = 0;
+
+      // Loop to initialize 2D array elements.
+      for (var i = 0; i < array.length / 2; i++) {
+        for (var j = 0; j < 2; j++) {
+          gfg[i][j] = array[h++];
+        }
+      }
+
+      const studentenLeben = new Vorrang(gfg);
+
+      var final = [];
+      for (const next of studentenLeben) {
+        final.push(next);
+      }
+
+      //test
+      test();
+      document.getElementById("textarea2").value=final;
+    } catch (err) {
+      document.getElementById("textarea2").value=err.message;
+    }
+  }
+
+  //test
+  function test() {
+    const array = new Vorrang([
+      ["schlafen", "studieren"],
+      ["essen", "studieren"],
+      ["studieren", "prüfen"]
+    ]);
+    var arrayfinal = [];
+    for (const next of array) {
+      arrayfinal.push(next);
+    }
+    var ausgabe = ["schlafen", "essen", "studieren", "prüfen"];
+    for (let i = 0; i < arrayfinal.length; i++) {
+
+      console.assert(ausgabe[i] === arrayfinal[i], `diese beide Werte ${ausgabe[i]} und ${arrayfinal[i]} sind nicht gleich`);
+    }
+  }
+</script>
+
+</body>
+</html>

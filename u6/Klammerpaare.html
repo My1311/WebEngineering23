@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 6.1</title>
+    <style>
+        input {
+            width: 300px;
+            padding: 10px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Klammerpaare</h1>
+    <p>Schreiben Sie eine Zeichenkette mit beliebigen Buchstaben, Zahlen und Sonderzeichen eingeben kann, die beliebig geschachtelte Klammern [...], (...) und {...} enthält.<br>
+        Das Program wird prüfen, ob alle Klammerpaare korrekt geschachtelt sind.</p>
+    <input type="text" id="input" oninput="validate()">
+    <div id="error"></div>
+</body>
+
+<script>
+
+    function checkBrackets(input, brackets) {
+        let stack = [];
+        for (let i = 0; i < input.length; i++) {
+            let char = input[i];
+            let index = brackets.open.indexOf(char);
+            if (index !== -1) {
+                stack.push(index);
+            } else if (brackets.close.indexOf(char) !== -1) {
+                if (stack.length === 0 || stack[stack.length - 1] !== brackets.close.indexOf(char)) {
+                    return false;
+                }
+                stack.pop();
+            }
+        }
+        return stack.length === 0;
+    }
+    function validate() {
+        let input = document.getElementById("input").value;
+        let brackets = {open: "[{(", close: "]})}"};
+        let result = checkBrackets(input, brackets);
+        let error = document.getElementById("error");
+
+        if (result) {
+            error.innerHTML = "";
+            error.classList.remove("error");
+        } else {
+            error.innerHTML = "Invalid input";
+            error.classList.add("error");
+            input.style.border = '1px solid red';
+        }
+    }
+    // Test Case 1: Valid input with correctly nested brackets
+    let input1 = "{[()]}";
+    let brackets1 = { open: "[{(", close: "]})}" };
+    console.assert(checkBrackets(input1, brackets1), "Test Case 1 failed");
+
+    // Test Case 2: Invalid input with incorrectly nested brackets
+    let input2 = "{[(])}";
+    let brackets2 = { open: "[{(", close: "]})}" };
+    console.assert(!checkBrackets(input2, brackets2), "Test Case 2 failed");
+
+    // Test Case 3: Valid input with no brackets
+    let input3 = "Hello World!";
+    let brackets3 = { open: "[{(", close: "]})}" };
+    console.assert(checkBrackets(input3, brackets3), "Test Case 3 failed");
+
+    // Test Case 4: Invalid input with unmatched closing brackets
+    let input4 = "abc)";
+    let brackets4 = { open: "(", close: ")" };
+    console.assert(!checkBrackets(input4, brackets4), "Test Case 4 failed");
+
+</script>
+</html>
