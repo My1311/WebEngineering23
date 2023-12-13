@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WWW Navi</title>
+  <style>
+    *{margin: 0; padding: 0; border: 0;box-sizing: border-box;}
+    /* Header*/
+    .container{
+      background-color: #c24f4f;
+      margin-top: 0;
+      border-radius : 25px 25px 0px 0px ;
+    }
+    h1{
+      text-align: center;
+      color: white;
+    }
+    .navbar ul{
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+      overflow: hidden;
+    }
+    .navbar a{
+      color: black;
+      text-decoration: none;
+      margin: 10px;
+      padding: 10px 20px;
+      text-align: center;
+      display: block;
+      border-radius: 10px;
+      border-style: outset;
+      border-color: white;
+      border-width: 2px;
+      background-color: #6a70a0;
+    }
+    .navbar a:hover{
+      background-color: white ;
+    }
+    .navbar li{
+      float: left;
+    }
+    /* Main */
+    main{
+       min-height: 60rem;
+      display: flex; flex-flow: row wrap;
+    }
+    aside{
+      background-color: #c28283;
+    }
+    aside:nth-child(1){
+      flex: 0 0 200px;
+      background-color: #c28283;
+    }
+    article{
+      flex: 1 0 auto;background-color: #95d2f3;
+    }
+    aside:nth-child(4){
+      flex: 0 0 250px;
+    }
+    /* Footer */
+    footer{
+      background-color: black; min-height: 50px;
+    }
+    .footerNav ul{
+      display: flex;
+      justify-content: center;
+    }
+    .footerNav ul li a{
+      margin: 20px;
+      font-size: 2em ;
+      opacity: 0.7;
+      transition: 0.5s;
+      color: white;
+    }
+    .footerNav ul li a:hover{
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>WWW-Navigator</h1>
+  <nav class="navbar">
+    <ul id="navbar">
+<!--      <li><a href="">HTML</a> </li>-->
+<!--      <li><a href="">CSS</a> </li>-->
+<!--      <li><a href="">JavaScript</a> </li>-->
+<!--      <li><a href="">Other</a> </li>-->
+    </ul>
+  </nav>
+
+</div>
+
+  <main>
+    <aside class = "left-side"></aside>
+      <ul id="sidebar">
+      </ul>
+    <article>
+        <div id="content" ></div>
+    </article>
+    <aside class = "right-side"></aside>
+      <div id="additional"></div>
+  </main>
+ <footer>
+   <div class="footerNav">
+       <ul>
+         <h1>Footer:</h1>
+         <li><a href="">Sitemap</a> </li>
+         <li><a href="">Home</a> </li>
+         <li><a href="">News</a> </li>
+         <li><a href="">Contact</a> </li>
+         <li><a href="">About</a> </li>
+       </ul>
+   </div>
+ </footer>
+<script>
+    const navbar = document.getElementById('navbar');
+    let sidebar = document.getElementById('sidebar')
+    const content = document.getElementById('content');
+    const additional = document.getElementById('additional');
+    let websiteStructure;
+
+    // function clickOnSidebar(indexNavbar, indexSidebar) {
+    //     let contentStructure = websiteStructure[indexNavbar][indexSidebar];
+    //     content.appendChild(contentStructure.content);
+    //     additional.appendChild(contentStructure.references);
+    // }
+    //
+    // function clickOnNavbar(index) {
+    //     let sidebarStructur = Object.values(websiteStructure).at(index);
+    //     let i = 0;
+    //     let tempSidebar = sidebar;
+    //     for (const sidebarStructurKey in sidebarStructur) {
+    //         let a = document.createElement('a');
+    //         a.addEventListener('click', ev => {
+    //             clickOnSidebar(index, i++);
+    //         });
+    //         a.innerText = sidebarStructurKey;
+    //
+    //         tempSidebar.appendChild(document.createElement('li').appendChild(a));// append headings, paragraph
+    //     }
+    //     sidebar.replaceWith(tempSidebar); // replace them with selectors, colors
+    // }
+    //
+    // function initNavbar(data) {
+    //     websiteStructure = data;
+    //     let i = 0;
+    //     for (const websiteStructureKey in websiteStructure) {
+    //         let a = document.createElement('a');
+    //         a.addEventListener('click', ev => {
+    //             clickOnNavbar(i++);
+    //         });
+    //         a.innerText = websiteStructureKey;
+    //         navbar.appendChild(document.createElement('li').appendChild(a));
+    //
+    //     }
+    // }
+    //
+    // document.addEventListener("DOMContentLoaded", event => {
+    //     fetch('./data.json')
+    //         .then(res =>res.json()) // Javascript normal Array
+    //         .then(data => {
+    //              websiteStructure = data;
+    //             initNavbar(websiteStructure);
+    //
+    //             // Object.entries(data).forEach(([key, value]) => {
+    //             //     console.log(`${key}: ${value}`);
+    //             //});
+    //         });
+    // });
+
+    function createNavbarElements(element) {
+        let listNameElement = document.createElement('li');
+        let aElem = document.createElement('a');
+        aElem.innerText = element;
+        listNameElement.appendChild(aElem);
+        navbar.appendChild(listNameElement);
+    }
+
+    function createSidebarElements(sidebarStructur) {
+        for (const sidebarStructurKey in sidebarStructur) {
+            let sidebarListElement = document.createElement('li');
+            sidebarListElement.innerText = sidebarStructurKey;
+            sidebar.appendChild(sidebarListElement);
+        }
+    }
+    function displayContent(section) {
+        for (const heading in section) {
+            let paragraphElement = document.createElement('p');
+            paragraphElement.innerText = section[heading].content;
+            content.appendChild(paragraphElement);
+
+            let referencesElement = document.createElement('p');
+            referencesElement.innerText = section[heading].references;
+            additional.appendChild(referencesElement);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", event => {
+        fetch('./data.json')
+            .then(res =>res.json()) // Javascript normal Array
+            .then(data => {
+                for (const element in data) {
+                    createNavbarElements(element);
+                    createSidebarElements(data[element]);
+                    displayContent(data[element]);
+                }
+            });
+    });
+
+</script>
+</body>
+</html>

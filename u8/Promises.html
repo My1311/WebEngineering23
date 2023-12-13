@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenated Files</title>
+</head>
+<body>
+
+<div id="output"></div>
+
+<script>
+    // Funktion zum Laden einer Datei über die Fetch-API
+    function ladeDatei(url) {
+        return fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Fehler beim Laden der Datei: ${response.status} ${response.statusText}`);
+                }
+                return response.text();
+            });
+    }
+
+    // URLs zu den Textdateien auf Ihrem Server
+    const urlA = 'http://localhost:63342/WebEngineering23/u8/A.txt';
+    const urlB = 'http://localhost:63342/WebEngineering23/u8/B.txt';
+
+    // Parallel beide Dateien laden und konkatenieren
+    Promise.all([ladeDatei(urlA), ladeDatei(urlB)])
+        .then(([inhaltA, inhaltB]) => {
+            const zeilenA = inhaltA.split('\n');
+            const zeilenB = inhaltB.split('\n');
+            const maxZeilen = Math.max(zeilenA.length, zeilenB.length);
+
+            for (let i = 0; i < maxZeilen; i++) {
+                const textA = zeilenA[i] || '';
+                const textB = zeilenB[i] || '';
+                const kombiniert = `${textA} - ${textB}`;
+                document.getElementById('output').innerHTML += `<p>${kombiniert}</p>`;
+            }
+        })
+        .catch(error => {
+            console.error('Fehler beim Laden der Dateien:', error);
+        });
+</script>
+
+</body>
+</html>

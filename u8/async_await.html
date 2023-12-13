@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>async/await</title>
+</head>
+<body>
+
+<div id="output"></div>
+
+<script>
+  // Funktion zum Laden einer Datei über die Fetch-API mit async/await
+  async function ladeDatei(url) {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`Fehler beim Laden der Datei: ${response.status} ${response.statusText}`);
+    }
+
+    return await response.text();
+  }
+
+  // URLs zu den Textdateien auf Ihrem Server
+  const urlA = 'http://localhost:63342/WebEngineering23/u8/A.txt';
+  const urlB = 'http://localhost:63342/WebEngineering23/u8/B.txt';
+
+  // Funktion zum Kombinieren der Zeilen
+  function kombiniereZeilen(zeilenA, zeilenB) {
+    const maxZeilen = Math.max(zeilenA.length, zeilenB.length);
+    let kombinierteAusgabe = '';
+
+    for (let i = 0; i < maxZeilen; i++) {
+      const textA = zeilenA[i] || '';
+      const textB = zeilenB[i] || '';
+      const kombiniert = `${textA} - ${textB}`;
+      kombinierteAusgabe += `<p>${kombiniert}</p>`;
+    }
+
+    return kombinierteAusgabe;
+  }
+
+  // Hauptfunktion mit async/await
+  async function main() {
+    try {
+      const inhaltA = await ladeDatei(urlA);
+      const inhaltB = await ladeDatei(urlB);
+
+      const zeilenA = inhaltA.split('\n');
+      const zeilenB = inhaltB.split('\n');
+
+      const kombinierteAusgabe = kombiniereZeilen(zeilenA, zeilenB);
+
+      document.getElementById('output').innerHTML = kombinierteAusgabe;
+    } catch (error) {
+      console.error('Fehler beim Laden der Dateien:', error);
+    }
+  }
+
+  // Aufruf der Hauptfunktion
+  main();
+</script>
+
+</body>
+</html>
