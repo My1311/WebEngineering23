@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interaktive SVG Grafik</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+    main {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    line {
+      stroke-width: 8;
+      stroke-linecap: round;
+    }
+    circle {
+      stroke-width: 8;
+      fill: none;
+    }
+    .player1 {
+      stroke: #501952;
+    }
+    .player2 {
+      stroke: #973183;
+    }
+    .grid {
+      stroke: #ddd;
+    }
+    #info {
+      margin: 50px 50px 0 0;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div id="game"></div>
+    <div id="info"></div>
+  </main>
+ <script src="Tic_Tac_Toe.js"></script>
+</body>
+</html>
