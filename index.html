@@ -12,154 +12,63 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <div class="leftSidenav">
-    <div id ="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!--add × Symbol -->
-        <a href="u1/Ubung1.html">1. HTTP, URI und HTML</a>
-        <a href="#">CSS</a>
-        <a href="#">Responsive Web Design (RWD)</a>
-        <a href="#">JavaScript</a>
-        <a href="#">Document Object Model</a>
-        <a href="#">ECMAScript</a>
-    </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-    </div>
+<header>
+    <h1>Solution-Navigator</h1>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <li><a href="index.html">Home</a> </li>
 
-    <div class="nav-wrapper">
-        <div class="left-side">
-            <div class="nav-link-wrapper">
-                <li><a href="index.html" class="fas fa-laptop-house" style="font-size:2rem;color:#2196F3"></a> </li>
-
-                <li><a href="about.html">About me</a></li>
+                    <li><a href="about.html">About me</a></li>
+                </div>
             </div>
-        </div>
-        <div class="right-side">
-            <div class="brand">
+            <div class="right-side">
                 <div>LE NGOC HA MY</div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="content-wrapper">
-    <div class="portfolio-items-wrapper">
+    <nav class="horizontal-navigation">
+        <ul>
+            <li><a href="u1/Lektion1.html">Übung 1</a></li>
+            <li><a href="u2/Lektion2.html">Übung 2</a></li>
+            <li><a href="u3/Lektion3.html">Übung 3</a></li>
+            <li><a href="u4/Lektion4.html">Übung 4</a></li>
+            <li><a href="u5/Lektion5.html">Übung 5</a></li>
+            <li><a href="u6/Lektion6.html">Übung 6</a></li>
+            <li><a href="u7/Lektion7.html">Übung 7</a></li>
+            <li><a href="u8/Lektion8.html">Übung 8</a></li>
+            <li><a href="u9/Lektion9.html">Übung 9</a></li>
+            <li><a href="u10/Lektion10.html">Übung 10</a></li>
+            <li><a href="u11/Lektion11.html">Übung 11</a></li>
+            <li><a href="u12/Lektion12.html">Übung 12</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title"><a href="u1/Lektion1.html">1. HTTP, URI und HTML</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">2. Cascading Style Sheets (CSS)
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">3. Responsive Web Design (RWD)</div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">4. JavaScript (JS)</div>
-                </div>
-            </div>
+<div class="main">
+    <label>
+        <input type="checkbox">
+        <div class = toggle>
+            <span class="top_line common"></span>
+            <span class="middle_line common"></span>
+            <span class="bottom_line common"></span>
         </div>
 
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">5. Document Object Model (DOM)</div>
-                </div>
-            </div>
+        <div class="vertical-navigation">
+                <h1>MENU</h1>
+                <ul>
+                    <li><a href="u1/Lektion1.html">1. HTTP, URI und HTML</a></li>
+                    <li><a href="u2/Lektion2.html">2.CSS</a></li>
+                    <li><a href="u3/Lektion3.html">3.Responsive Web Design (RWD)</a></li>
+                    <li><a href="u4/Lektion4.html">4.JavaScript</a></li>
+                    <li><a href="u5/Lektion5.html">5.Document Object Model</a></li>
+                    <li><a href="u6/Lektion6.html">6.ECMAScript</a></li>
+                </ul>
         </div>
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">6. ECMAScript (ES)
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="portfolio-item-wrapper">
-            <div class="portfolio-img-background" style="background-image:url(images/themen_background.jpg)">
-                <div class="img-text-wrapper">
-                    <div class="title">
-                    </div>
-                </div>
-            </div>
-        </div>
+    </label>
 
-    </div>
 
 
 </div>

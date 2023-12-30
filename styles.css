@@ -1,59 +1,15 @@
-.container{
-    height: 5rem;
-}
-/*Nav Link Side Style*/
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
 /*Nav Top Style*/
+header {
+    background-color: #FAC49A;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
+
 }
 .left-side{
     display: flex;
@@ -73,66 +29,159 @@ li{
     display: inline; /* make Home and About me in 1 line */
 }
 .nav-link-wrapper a{
-    color: #8a8a8a;
+    color: white;
     font-weight: bold;
     text-decoration: none;
     transition: color 0.5s;
+    margin-right: 3rem;
 }
 
 .nav-link-wrapper a:hover{
     color: black;
 }
-/* Portfolio Style*/
-.portfolio-items-wrapper{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap:20px;
+.horizontal-navigation{ /*not working*/
+    position: -webkit-sticky;
+    position: sticky;
 }
-.portfolio-item-wrapper{
-    position: relative;
+.horizontal-navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-.portfolio-img-background{
-    height: 400px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.horizontal-navigation li {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+
 }
-.img-text-wrapper {
+.horizontal-navigation a{
+    color: #2196F3;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.5s;
+    margin-right: 1rem;
+    font-size: large;
+    display: block;
+    padding: 10px;
+    border-radius:30px ;
+}
+.horizontal-navigation a:hover{
+    color: #F37E21;
+    background-color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/*Nav Top Style Ende */
+/*Nav Link Side Style*/
+.vertical-navigation {
+    height: 100%;
+    width:  180px;
     position: absolute;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height:100%;
-    text-align: center;
-    padding-left: 100px;
-    padding-right: 100px;
+    background-color: #f2f2f2;
+    transition: 0.5s ease;
+    transform: translateX(-180px);
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.vertical-navigation h1{
+    color: #FAC49A ;
+    font-weight: 800;
+    text-align: right;
+    padding: 10px 0;
+    pointer-events: none;
+}
+.vertical-navigation ul li{
+    list-style: none;
 }
 
-.img-text-wrapper {
-    transition: 1s;
-    color: blue;
-    font-size: 40px;
+.vertical-navigation ul li a{
+    color: #2196F3;
+    font-weight: 500;
+    padding: 5px 0;
+    display: block;
     text-decoration: none;
+    transition: 0.2s ease-out;
 }
-.img-text-wrapper a{
-    text-decoration: none;
+input {
+    display: none;
+    visibility: hidden;
+    -webkit-appearance: none;
 }
-.img-text-wrapper a:hover{
-    color: #ff9719;
+.toggle{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    left: 10px;
+    z-index: 1;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.toggle .common{
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #2196F3;
+    border-radius: 50px;
+    transition: 0.3s ease;
 }
 
-.img-text-wrapper:hover .title{
-    font-weight:600;
-    color: #ff9719;
-    text-decoration: none;
+.toggle  .top_line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
-.img-darken{
-    transition: 1s;
-    filter: brightness(10%);
+.toggle  .top_line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
+.toggle  .middle_line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.toggle  .bottom_line{
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+input:checked ~ .toggle  .top_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+input:checked ~ .toggle  .bottom_line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+input:checked ~ .toggle  .middle_line{
+    opacity: 0;
+    transform: translateX(20px);
+}
+input:checked ~ .vertical-navigation{
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+
 
 
 
