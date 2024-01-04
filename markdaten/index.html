@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live-Coding: Marktdaten-Visualisierung</title>
+
+</head>
+<body>
+    <h1>Stromerzeugung in Deutschland </h1>
+    <p>Stand: <span> 01.01.2024, 22:28</span></p>
+    <p>Von: <span> 22.12.2023, 00:00</span></p>
+    <p>Bis:<span>01.01.2024, 23:59</span></p>
+    <h2>Binmasse</h2>
+    <table>
+        <tr>
+            <th>Datum</th>
+            <th>Uhrzeit</th>
+            <th>Wert</th>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    <script>
+    fetch("./data.xml").then(function (result) {
+        result.text().then(function (result) {
+            result = new DOMParser().parseFromString(result, "text/xml");
+            console.log(result)
+        })
+    });
+    </script>
+</body>
+</html>

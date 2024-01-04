@@ -16,216 +16,452 @@
     <div class="container">
         <div class="left-side">
             <!-- Die Link needs fixing -->
-            <a href="index.html" class="fas fa-laptop-house" style="font-size:2rem;color:#2196F3"></a>
+            <a href="../index.html" class="fas fa-laptop-house" style="font-size:2rem;color:#2196F3"></a>
         </div>
         <div class="middle">
             <h1>KW 41</h1>
         </div>
     </div>
 </header>
+
 <main>
-    <section class="questions">
-        <div class ="title">
-            <h2>1.1 World Wide Web</h2>
-        </div>
-        <!-- questions -->
-        <div class="section-center">
-            <!-- single question -->
-            <article class="question">
-                <!-- question title -->
-                <div class="question-title">
-                    <p>1. Mit welchen fachlichen Argumenten wurde das WWW-Proposal von Tim Burners Lee abgelehnt?</p>
-                    <button type="button" class="question-btn">
-                <span class="plus-icon">
-                  <i class="far fa-plus-square"></i>
-                </span>
-                        <span class="minus-icon">
-                  <i class="far fa-minus-square"></i>
-                </span>
-                    </button>
-                </div>
-                <!-- answer text -->
-                <div class="answer-text">
-                    <p>
-                        Die fachlichen Argumenten, warum das WWW-Proposal von Tim Burners Lee abgelehnt wurde, sind:
-                    <li>fehlende mathematische Rigorosität, </li>
-                    <li>Gefahr von “broken links”, </li>
-                    <li>Verteilte Texte statt verteilte Objekte, </li>
-                    <li>besser wäre ein Objekt- statt einem Text-Protokoll, </li>
-                    <li>“Texte ohne klar definierte Semantik sind die Ursache allen Übels.”, </li>
-                    <li>Ohne klar definierte Semantik ergibt sich eine lange Liste von Patches. </li>
-                    </p>
-                </div>
-            </article>
-            <!-- end of single question -->
-            <!-- single question -->
-            <article class="question">
-                <!-- question title -->
-                <div class="question-title">
-                    <p>2. Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</p>
-                    <button type="button" class="question-btn">
-                <span class="plus-icon">
-                  <i class="far fa-plus-square"></i>
-                </span>
-                        <span class="minus-icon">
-                  <i class="far fa-minus-square"></i>
-                </span>
-                    </button>
-                </div>
-                <!-- answer text -->
-                <div class="answer-text">
-                    <p>Die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde, sind:
-                    <li>Technologie von WWW ist simpel. => fast verbreitet, </li>
-                    <li>WWW ist ein Mittel, sodass alle Rechner in der Welt miteinander kommunizieren können. </li>
-                    </p>
-                </div>
-            </article>
-            <!-- end of single question -->
-            <!-- single question -->
-            <article class="question">
-                <!-- question title -->
-                <div class="question-title">
-                    <p>3. Was wäre der Preis für die garantierte Verhinderung von "broken links"?</p>
-                    <button type="button" class="question-btn">
-                <span class="plus-icon">
-                  <i class="far fa-plus-square"></i>
-                </span>
-                        <span class="minus-icon">
-                  <i class="far fa-minus-square"></i>
-                </span>
-                    </button>
-                </div>
-                <!-- answer text -->
-                <div class="answer-text">
-                    <p>Der Preis für die garantierte Verhinderung von "broken links" wäre:
-                    <li>Vermeidung der Deep-Links auf der Website, es sei denn (oder bis) dies erforderlich ist, </li>
-                    <li>Einsatz von Umleitungsmechanismen, </li>
-                    <li>Erstellung und Ersatz des Inhaltes der defekten URL neu, </li>
-                    <li>Leitung der defekten Seite (301) auf eine andere relevante Seite Ihrer Website um, </li>
-                    <li>404: Dies ist eine Option; Sie müssen nur sicherstellen, dass Sie einen „harten“ 404 und keinen „weichen“ 404 anzeigen. </li>
-                    </p>
-                </div>
-            </article>
-            <!-- end of single question -->
-        </div>
-    </section>
-
-    <section class="questions">
-        <div class ="title">
-            <h2>1.2 HTTP</h2>
-        </div>
-        <!-- questions -->
-        <div class="section-center">
-            <!-- single question -->
-            <article class="question">
-                <!-- question title -->
-                <div class="question-title">
-                    <p>1. Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?</p>
-                    <p>2. Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten?</p>
-                    <p>3. Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie dagegen tun?</p>
-                    <p>4. Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun? </p>
-                    <p>5. In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll.
-                     Aus Performancegründen soll die Abfrage aber cacheable sein. Wie könnten Sie dafür eine Lösung angehen?</p>
-                    <button type="button" class="question-btn">
-                <span class="plus-icon">
-                  <i class="far fa-plus-square"></i>
-                </span>
-                        <span class="minus-icon">
-                  <i class="far fa-minus-square"></i>
-                </span>
-                    </button>
-                </div>
-                <!-- answer text -->
-                <div class="answer-text">
-                    <p>1. Der HTTP-Statuscode <mark> 200 OK </mark>gibt an, dass eine Anfrage erfolgreich verlaufen ist.
-                        Eine 200-Antwort ist standardmäßig im Cache speicherbar.
-                        Unter dieser URL wurde eine valide Webseite gefunden.
-                    </p>
-                    <p>2. Code 301: Die URL wurde dauerhaft auf eine neue URL verschoben. </p>
-                    <p>3. Code 400: Der HTTP-Statuscode 400 Bad Request gibt an, dass der Server die Anfrage nicht verarbeiten kann,
-                        weil anscheinend ein clientseitiger Fehler geschehen ist (z.B. eine syntaktisch falsche Anfrage).
-                        Der Client sollte diese Anfrage nicht unmodifiziert wiederholen.</p>
-                    <p>4. Code 403: Der HTTP 403 Forbidden Statuscode zeigt an, dass der Server die Anfrage zwar verstanden hat, aber sich weigert, sie zuzulassen.</p>
-                    <p>5. OPTIONS-Anfrage ist nicht cacheable. </p>
-                </div>
-            </article>
-            <!-- end of single question -->
-        </div>
-    </section>
-
-    <section class="quiz-question">
-        <div class ="title">
-            <h2>1.3 Quiz zu HTML</h2>
-        </div>
-        <div class="content">
-            <div class="question-and-answer">
-                <fieldset>
-                    <legend>Frage 1/6: Was ist HTML?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> eine Auszeichnungssprache <br/>
-                </fieldset>
-                <fieldset>
-                    <legend>Frage 2/6: Wofür steht HTML?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> Hypertext Markup Language <br/>
-                </fieldset>
-                <fieldset>
-                    <legend>Frage 3/6: Wofür wird HTML eingesetzt?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> für die Strukturierung digitaler Dokumente <br/>
-                </fieldset>
-                <fieldset>
-                    <legend>Frage 4/6: Wer hat HTML erfunden?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> Tim Berners-Lee <br/>
-                </fieldset>
-                <fieldset>
-                    <legend>Frage 5/6: Zu welchem ursprünglichen Zweck wurde HTML erfunden?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked">für den Austausch wissenschaftlicher Publikationen<br/>
-                </fieldset>
-                <fieldset>
-                    <legend>Frage 6/6: Wer arbeitet alles an der Weiterentwicklung von HTML?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> die Web Hypertext Application Technology Working Group (WHATWG)<br/>
-                    <input class ="checkmark" type="radio"  checked="checked"> das World Wide Web Consortium (W3C)<br/>
-                </fieldset>
+    <nav>
+        <ul>
+            <li><label for="aufgabe1">Aufgabe 1</label></li>
+            <li><label for="aufgabe2">Aufgabe 2</label></li>
+            <li><label for="aufgabe3">Aufgabe 3</label></li>
+            <li><label for="aufgabe4">Aufgabe 4</label></li>
+            <li><label for="aufgabe6">Aufgabe 6</label></li>
+            <li><label for="aufgabe7">Aufgabe 7</label></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe1">
+            <article>
+            <div class ="title">
+                <h2>1.1 World Wide Web</h2>
             </div>
-        </div>
-
-    </section>
-
-    <section class="quiz-question">
-        <div class ="title">
-            <h2>1.4 Quiz zu HTML-Tags</h2>
-        </div>
-        <div class="content">
-            <div class="question-and-answer">
-                <fieldset>
-                    <legend>Frage 1/6: Was ist HTML-Tag?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> ein Auszeichnungselement <br/>
-                </fieldset>
-                <fieldset>
-                    <legend>Frage 2/6: Wofür nutzt man einen HTML-Tag?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> Zur Einbettung weiterer Inhalte, die über Text hinausgehen <br/>
-                    <input class ="checkmark" type="radio"  checked="checked"> Zur Strukturierung von Webseiteninhalten <br/>
-                </fieldset>
-                <fieldset>
-                    <legend>Frage 3/6: Woraus besteht ein HTML-Tag und wie setzt man ihn ein?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> <pre><code>Hallo Welt!&lt;br&gt;Willkommen.</code></pre> <br/>
-                    <input class ="checkmark" type="radio"  checked="checked"> <pre><code> &lt;h2&gt;Überschrift<&lt;/h2&gt; </code></pre> <br/>
-                    <input class ="checkmark" type="radio"  checked="checked"> <pre><code> &lt;p&gt;Paragraph<&lt;/p&gt; </code></pre> <br/>
-                </fieldset>
-                <fieldset>
-                    <legend>Frage 4/6: Was ist ein HTML-Attribut?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> eine Eigenschaft <br/>
-                </fieldset>
-                <fieldset>
-                    <legend>Frage 5/6: Wofür nutzt man ein HTML-Attribut??</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> zur Beschreibung zusätzlicher Eigenschaften von HTML-Tags <br/>
-                </fieldset>
-                <fieldset>
-                    <legend>Frage 6/6: Wie schreibt man einen Kommentar in HTML?</legend>
-                    <input class ="checkmark" type="radio"  checked="checked"> <pre><code> &lt;!--Kommentar -->&gt; </code></pre><br/>
-                </fieldset>
+            <!-- questions -->
+            <div class="section-center">
+                <!-- single question -->
+                <div class="question">
+                    <!-- question title -->
+                    <div class="question-title">
+                        <p>1. Mit welchen fachlichen Argumenten wurde das WWW-Proposal von Tim Burners Lee abgelehnt?</p>
+                        <button type="button" class="question-btn">
+                    <span class="plus-icon">
+                      <i class="far fa-plus-square"></i>
+                    </span>
+                            <span class="minus-icon">
+                      <i class="far fa-minus-square"></i>
+                    </span>
+                        </button>
+                    </div>
+                    <!-- answer text -->
+                    <div class="answer-text">
+                        <p>
+                            Die fachlichen Argumenten, warum das WWW-Proposal von Tim Burners Lee abgelehnt wurde, sind:
+                        <li>fehlende mathematische Rigorosität, </li>
+                        <li>Gefahr von “broken links”, </li>
+                        <li>Verteilte Texte statt verteilte Objekte, </li>
+                        <li>besser wäre ein Objekt- statt einem Text-Protokoll, </li>
+                        <li>“Texte ohne klar definierte Semantik sind die Ursache allen Übels.”, </li>
+                        <li>Ohne klar definierte Semantik ergibt sich eine lange Liste von Patches. </li>
+                        </p>
+                    </div>
+                </div>
+                <!-- end of single question -->
+                <!-- single question -->
+                <div class="question">
+                    <!-- question title -->
+                    <div class="question-title">
+                        <p>2. Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</p>
+                        <button type="button" class="question-btn">
+                    <span class="plus-icon">
+                      <i class="far fa-plus-square"></i>
+                    </span>
+                            <span class="minus-icon">
+                      <i class="far fa-minus-square"></i>
+                    </span>
+                        </button>
+                    </div>
+                    <!-- answer text -->
+                    <div class="answer-text">
+                        <p>Die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde, sind:
+                        <li>Technologie von WWW ist simpel. => fast verbreitet, </li>
+                        <li>WWW ist ein Mittel, sodass alle Rechner in der Welt miteinander kommunizieren können. </li>
+                        </p>
+                    </div>
+                </div>
+                <!-- end of single question -->
+                <!-- single question -->
+                <div class="question">
+                    <!-- question title -->
+                    <div class="question-title">
+                        <p>3. Was wäre der Preis für die garantierte Verhinderung von "broken links"?</p>
+                        <button type="button" class="question-btn">
+                    <span class="plus-icon">
+                      <i class="far fa-plus-square"></i>
+                    </span>
+                            <span class="minus-icon">
+                      <i class="far fa-minus-square"></i>
+                    </span>
+                        </button>
+                    </div>
+                    <!-- answer text -->
+                    <div class="answer-text">
+                        <p>Der Preis für die garantierte Verhinderung von "broken links" wäre:
+                        <li>Vermeidung der Deep-Links auf der Website, es sei denn (oder bis) dies erforderlich ist, </li>
+                        <li>Einsatz von Umleitungsmechanismen, </li>
+                        <li>Erstellung und Ersatz des Inhaltes der defekten URL neu, </li>
+                        <li>Leitung der defekten Seite (301) auf eine andere relevante Seite Ihrer Website um, </li>
+                        <li>404: Dies ist eine Option; Sie müssen nur sicherstellen, dass Sie einen „harten“ 404 und keinen „weichen“ 404 anzeigen. </li>
+                        </p>
+                    </div>
+                </div>
+                <!-- end of single question -->
             </div>
-        </div>
+            </article>
+        </section>
 
-    </section>
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe2">
+            <article>
+            <div class ="title">
+                <h2>1.2 HTTP</h2>
+            </div>
+            <!-- questions -->
+            <div class="section-center">
+                <!-- single question -->
+                <article class="question">
+                    <!-- question title -->
+                    <div class="question-title">
+                        <p>1. Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?</p>
+                        <p>2. Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten?</p>
+                        <p>3. Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie dagegen tun?</p>
+                        <p>4. Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun? </p>
+                        <p>5. In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll.
+                         Aus Performancegründen soll die Abfrage aber cacheable sein. Wie könnten Sie dafür eine Lösung angehen?</p>
+                        <button type="button" class="question-btn">
+                    <span class="plus-icon">
+                      <i class="far fa-plus-square"></i>
+                    </span>
+                            <span class="minus-icon">
+                      <i class="far fa-minus-square"></i>
+                    </span>
+                        </button>
+                    </div>
+                    <!-- answer text -->
+                    <div class="answer-text">
+                        <p>1. Der HTTP-Statuscode <mark> 200 OK </mark>gibt an, dass eine Anfrage erfolgreich verlaufen ist.
+                            Eine 200-Antwort ist standardmäßig im Cache speicherbar.
+                            Unter dieser URL wurde eine valide Webseite gefunden.
+                        </p>
+                        <p>2. Code 301: Die URL wurde dauerhaft auf eine neue URL verschoben. </p>
+                        <p>3. Code 400: Der HTTP-Statuscode 400 Bad Request gibt an, dass der Server die Anfrage nicht verarbeiten kann,
+                            weil anscheinend ein clientseitiger Fehler geschehen ist (z.B. eine syntaktisch falsche Anfrage).
+                            Der Client sollte diese Anfrage nicht unmodifiziert wiederholen.</p>
+                        <p>4. Code 403: Der HTTP 403 Forbidden Statuscode zeigt an, dass der Server die Anfrage zwar verstanden hat, aber sich weigert, sie zuzulassen.</p>
+                        <p>5. OPTIONS-Anfrage ist nicht cacheable. </p>
+                    </div>
+                </article>
+                <!-- end of single question -->
+            </div>
+            </article>
+        </section>
+
+        <section class="quiz-question">
+            <input type ="radio" name="article" id="aufgabe3">
+            <article>
+                <div class ="title">
+                    <h2>1.3 Quiz zu HTML</h2>
+                </div>
+                <div class="small-content">
+                    <div class="question-and-answer">
+                        <fieldset>
+                            <legend>Frage 1/6: Was ist HTML?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> eine Auszeichnungssprache <br/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Frage 2/6: Wofür steht HTML?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> Hypertext Markup Language <br/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Frage 3/6: Wofür wird HTML eingesetzt?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> für die Strukturierung digitaler Dokumente <br/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Frage 4/6: Wer hat HTML erfunden?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> Tim Berners-Lee <br/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Frage 5/6: Zu welchem ursprünglichen Zweck wurde HTML erfunden?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked">für den Austausch wissenschaftlicher Publikationen<br/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Frage 6/6: Wer arbeitet alles an der Weiterentwicklung von HTML?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> die Web Hypertext Application Technology Working Group (WHATWG)<br/>
+                            <input class ="checkmark" type="radio"  checked="checked"> das World Wide Web Consortium (W3C)<br/>
+                        </fieldset>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="quiz-question">
+            <input type ="radio" name="article" id="aufgabe4">
+            <article>
+                <div class ="title">
+                    <h2>1.4 Quiz zu HTML-Tags</h2>
+                </div>
+                <div class="small-content">
+                    <div class="question-and-answer">
+                        <fieldset>
+                            <legend>Frage 1/6: Was ist HTML-Tag?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> ein Auszeichnungselement <br/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Frage 2/6: Wofür nutzt man einen HTML-Tag?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> Zur Einbettung weiterer Inhalte, die über Text hinausgehen <br/>
+                            <input class ="checkmark" type="radio"  checked="checked"> Zur Strukturierung von Webseiteninhalten <br/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Frage 3/6: Woraus besteht ein HTML-Tag und wie setzt man ihn ein?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> <pre><code>Hallo Welt!&lt;br&gt;Willkommen.</code></pre> <br/>
+                            <input class ="checkmark" type="radio"  checked="checked"> <pre><code> &lt;h2&gt;Überschrift<&lt;/h2&gt; </code></pre> <br/>
+                            <input class ="checkmark" type="radio"  checked="checked"> <pre><code> &lt;p&gt;Paragraph<&lt;/p&gt; </code></pre> <br/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Frage 4/6: Was ist ein HTML-Attribut?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> eine Eigenschaft <br/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Frage 5/6: Wofür nutzt man ein HTML-Attribut??</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> zur Beschreibung zusätzlicher Eigenschaften von HTML-Tags <br/>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Frage 6/6: Wie schreibt man einen Kommentar in HTML?</legend>
+                            <input class ="checkmark" type="radio"  checked="checked"> <pre><code> &lt;!--Kommentar -->&gt; </code></pre><br/>
+                        </fieldset>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe6">
+            <article>
+                <div class ="title">
+                    <h2>1.6 HTML-Literatur lesen und Fragen beantworten</h2>
+                </div>
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">1. Was ist HTML?</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <p>HTML (Hypertext Markup Language) ist der Code, welcher benötigt wird, um den Webinhalt zu strukturieren und ihm eine Bedeutung und einen Zweck zu geben.</p>
+                    </div>
+                </div>
+                <hr class="hr-line">
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">2. Wie kann man eine geschachtelte geordnete Liste der Tiefe 3 erzeugen?</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+Mit <ul>, <li>, <ol> wie zB:
+<html>
+<head>
+    <title>verschachtelte Listen</title>
+</head>
+<body>
+<ul>
+    <li>Erster Listeneintrag</li>
+    <li>Zweiter Listeneintrag</li>
+    <ol>
+        <li>Unterpunkt 1 des zweiten Listenpunktes</li>
+        <li>Unterpunkt 2 des zweiten Listenpunktes</li>
+        <li>Unterpunkt 3 des zweiten Listenpunktes</li>
+    </ol>
+    <li>Dritter Listeneintrag</li>
+    <li>Vierter Listeneintrag</li>
+</ul>
+</body>
+</html>
+                        </xmp>  <!-- everything funktioniert gut, nur rot -->
+                    </div>
+                </div>
+                <hr class="hr-line">
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">3. Wie ist eine HTML-Tabelle aufgebaut?</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <p>Eine HTML-Tabelle wird wie zB aufgebaut:</p>
+<xmp>
+ <table>
+    <tr>
+        <td>Inhalt</td>
+    </tr>
+ </table>
+</xmp>
+                        <p>Dieses (sinnfreie) Beispiel definiert eine Tabelle, welche nur aus einer einzigen Zelle besteht.<p>
+                        <pre>
+                        <code>
+&lt;table&gt; leitet eine Tabelle ein (table = Tabelle).
+&lt;tr&gt; leitet eine neue Tabellenzeile ein (tr = table row = Tabellenzeile).
+&lt;th&gt; leitet eine Kopfzelle ein (th = table header = Tabellenkopf),
+&lt;td&gt; eine normale Datenzelle (td = table data = Tabellendaten).
+                        </code>
+                        </pre>
+                    </div>
+                <hr class="hr-line">
+                </div>
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">4. Welche Konventionen sollte man bei Pfaden und Dateinamen beachten?</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <p>Bei modernen Unix-Systemen, wie  die meisten WWW-Server eingesetzt wird, sind Dateinamen bis zu 256 Zeichen Länge erlaubt.
+                            In jedem Fall deutsche Umlaute und scharfes ß in den Dateinamen sollten vermieden werden.
+                            Als Sonderzeichen ist in jedem Fall der Unterstrich "_" erlaubt. Andere Satzzeichen sollten auch vermieden werden..
+                            Fragezeichen "?", Sternzeichen "*", Istgleichzeichen "=" dürfen auf keinen Fall in Dateinamen verwendet werden.
+                            Auch auf Leerzeichen sollten unbedingt verzichtet werden.
+                        </p>
+                    </div>
+                <hr class="hr-line">
+                </div>
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">5. Wie baut man in HTML ein Menü?</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+Eine Navigationsleiste ist im Grunde eine Liste von Links, daher ist die Verwendung der Elemente <ul> und <li> absolut sinnvoll:
+ <!DOCTYPE html>
+ <html>
+ <body>
+ <ul>
+     <li><a href="#home">Startseite</a></li>
+     <li><a href="#news">Neuigkeiten</a></li>
+     <li><a href="#contact">Kontakt</a></li>
+     <li><a href="#about">Über</a></li>
+ </ul>
+ <p>Hinweis: Wir verwenden href="#" für Testlinks. Auf einer echten Website wären dies URLs.</p>
+ </body>
+ </html>
+</xmp>
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">6. Welche Attribute sollte man bei Bildern wie verwenden?</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <p> Das Attribut src (source) gibt den Namen oder die Position des anzuzeigenden Bildes an. Der Wert des Attributs src muss den Namen der Bilddatei oder deren URL enthalten.
+
+                            Das Attribut alt ist für das Image-Tag auch notwendig. Es wird verwendet, um Browsern einen alternativen Text zur Verfügung zu stellen, wenn das Bild nicht angezeigt werden kann (bei langsamer Verbindung, wenn ein Bildschirmleser verwendet wird usw.).
+
+                            Es wird empfohlen, die Attribute width und height mit dem Tag &lt;img&gt; zu verwenden.
+
+                            Die Atrribute class klassifiziert das Bild, sodass wir sie einfach mit CSS dekorieren können.
+
+                            zB: &lt;img src="img_lights.jpg" class="w3-round-small" alt="Norway" style="width:30%"&gt;</p>
+                    </div>
+                </div>
+                <hr class="hr-line">
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe7">
+            <article>
+                <div class ="title">
+                    <h2>1.7 HTML-Wireframe</h2>
+                </div>
+                <div class="faq-page">
+                    <h3>HTML Image</h3>
+                    <img src="../images/wireframe01.jpg" alt="html_wireframe" width="500" height="auto">
+                    <h3>HTML-Code ohne CSS wird dieses Wireframe exakt nachbilden:</h3>
+                </div>
+                        <xmp>
+                            <!DOCTYPE html>
+                            <html lang="en">
+                            <head>
+                                <meta charset="UTF-8">
+                                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                <title>Übung 1</title>
+
+                            </head>
+                            <body>
+                            <h1 title>Übung 1.2: Inventors of the Web</h1>
+
+                            <ul>
+                                <li><mark><u><b>Tim Berners-Lee:</b></u></mark> WWW, HTTP,HTML, URI</li>
+                                <li><b>Hakom Lie and Bert Bos:</b> CSS</li>
+                                <li><b>Brendan Eich:</b>  JavaScript</li>
+                            </ul>
+                            <hr>
+                            <caption>
+                                <h2>Inventors of the WWW</h2>
+                                <table border="10" > <!-- make table shadow -->
+                                    <tr>
+                                        <th colspan="4">Inventors of the WWW</th>
+                                    </tr>
+                                    <tr>
+                                        <th>WWW</th>
+                                        <th>HTML</th>
+                                        <th>CSS</th>
+                                        <th>JavaScript</th>
+                                    </tr>
+                                    <tr>
+                                        <td><mark>Tim Berners-Lee</mark></td>
+                                        <td><mark>Tim Berners-Lee</mark></td>
+                                        <td>Hakom Lie and Bert Bos</td>
+                                        <td>Brendan Eich</td>
+                                    </tr>
+                                </table>
+
+                                <hr>
+                            </caption>
+
+                            <!-- - neu --->
+                            <table id="table2">
+                                <caption>
+                                    <h3>Inventors of the WWW</h3>
+                                    <hr>
+                                </caption>
+                                <tr>
+                                    <th>HTML</th>
+                                    <th>|</th>
+                                    <th>JavaScript</th>
+                                </tr>
+                                <tr>
+                                    <td><img src ="https://kaul.inf.h-brs.de/we/assets/img/tbl.jpg"alt="TBL" ></td>
+                                    <td>|</td>
+                                    <td><img src ="https://kaul.inf.h-brs.de/we/assets/img/eich.jpg"alt="Eich" ></td>
+                                </tr>
+                                <tr>
+                                    <td><mark>Tim Berners-Lee</mark></td>
+                                    <td>|</td>
+                                    <td><p>Brendan Eich</p></td>
+                                </tr>
+                            </table>
+                            <hr>
+                            </body>
+                            </html>
+                        </xmp>
+                <a href=../u1/HTML-Wireframe.html>
+                    <button>Ergebnis sehen!</button>
+                </a>
+            </article>
+        </section>
+    </div>
+
 
 </main>
 <!-- javascript -->
