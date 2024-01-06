@@ -7,27 +7,19 @@
 </head>
 <body>
     <h1>Stromerzeugung in Deutschland </h1>
+    <!--
     <p>Stand: <span> 01.01.2024, 22:28</span></p>
     <p>Von: <span> 22.12.2023, 00:00</span></p>
     <p>Bis:<span>01.01.2024, 23:59</span></p>
-    <h2>Binmasse</h2>
-    <table>
-        <tr>
-            <th>Datum</th>
-            <th>Uhrzeit</th>
-            <th>Wert</th>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-    </table>
-    <script>
-    fetch("./data.xml").then(function (result) {
-        result.text().then(function (result) {
-            result = new DOMParser().parseFromString(result, "text/xml");
-            console.log(result)
-        })
-    });
-    </script>
+    -->
+    <p>Stand: <span id="stand"> </span></p>
+    <p>Von: <span id ="von"> </span></p>
+    <p>Bis:<span id="bis"> </span></p>
+    <main>
+
+    </main>
+    <script src="script.js"></script>
+
+
 </body>
 </html>
