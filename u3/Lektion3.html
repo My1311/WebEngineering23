@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 3: Responsive Webdesign (RWD)</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <!-- extra fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <!-- styles -->
+    <link rel="stylesheet" href="../u1/L1styles.css" />
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="left-side">
+            <!-- Die Link needs fixing -->
+            <a href="../index.html" class="fas fa-laptop-house" style="font-size:2rem;color:#2196F3"></a>
+        </div>
+        <div class="middle">
+            <h1>KW 42</h1>
+        </div>
+    </div>
+</header>
+<main>
+    <nav>
+        <ul>
+            <li><label for="aufgabe1">Aufgabe 1</label></li>
+            <li><label for="aufgabe2">Aufgabe 2</label></li>
+            <li><label for="aufgabe3">Aufgabe 3</label></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe1">
+            <article>
+                <div class ="title">
+                    <h2>3.1 Responsiv mit Flexbox und Desktop-First</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Implementieren Sie dann ausschließlich mit HTML, CSS und Flexbox
+                            das folgende Responsive Webdesign nach der Desktop-First-Strategie:
+                        </h3>
+                        <object type="text/html" data="../u3/3.1_Responsiv_Flexbox_Desktop.html" style="height: 80%; width: auto; "></object>
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Übung3.1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+          body{
+              display: flex;
+              flex-wrap: wrap;/* flex items will wrap onto multiple lines, from top to bottom.*/
+              height: 95vh;
+              margin: 2.5vw 3vw 2.5vw 3vw;
+          }
+          .container{
+              background-color: #E62E2D ;
+              flex-basis: 100%;
+              height: 30%;
+              margin-bottom: 1.5vw;
+          }
+          aside.left{
+              background-color: #73EE2B;
+              width: 19%;
+              height: 68%;
+              margin-right: 1vw;
+          }
+          .main{
+              background-color: #2734FF ;
+              width: 59.76%;
+          }
+          aside.right{
+              background-color: #E83EFF;
+              width: 19%;
+              height: 68%;
+              margin-left: 1vw;
+          }
+          @media all and (max-width: 600px) {
+              aside.left{width: 35%}
+              aside.right {width: 100%; height: 20%; margin-left: 0vw; margin-top: 1vw;}
+              .main {width: 63.76%}
+          }
+          @media all and (max-width: 300px) {
+              body{margin: 0%;}
+              .container, aside.left, aside.right {
+                  width: 100%;
+                  height: 20%;
+                  margin: 0;
+              }
+              .main { width: 100%; height: 160%;}
+          }
+      </style>
+</head>
+<body>
+    <nav class="container"></nav>
+    <aside class="left"></aside>
+    <article class="main"></article>
+    <aside class="right"></aside>
+</body>
+</html>
+                        </xmp>
+                        <a href=../u3/3.1_Responsiv_Flexbox_Desktop.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe2">
+            <article>
+                <div class ="title">
+                    <h2>3.2 Responsiv mit Grid und Mobile-First</h2>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Implementieren Sie dann das gleiche Responsive Webdesign wie zuvor in Aufgabe 3.1,
+                            allerdings diesmal mit Grid und der Mobile-First-Strategie.
+                        </h3>
+                        <h3>
+                            Vermeiden Sie außerdem das Erscheinen von horizontalen Scrollbars so weit wie möglich.
+                        </h3>
+                        <object type="text/html" data="../u3/3.2_Reponsiv_Grid_Mobil_First.html" style="height: 80%; width: auto; "></object>
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung3.2</title>
+    <style>
+        @media screen  and (min-width: 240px){
+            body{
+                margin: 0;
+            }
+            .container{
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 10fr 1fr;
+                grid-template-areas: "header" "left" "center" "right";
+                height: 100vh;
+            }
+            .header {
+                background-color: #E62E2D;
+                grid-area: header;
+            }
+
+            .left {
+                background-color: #73EE2B;
+                grid-area: left;
+            }
+
+            .main {
+                background-color: #2734FF;
+                grid-area: center;
+            }
+
+            .right {
+                background-color: #E83EFF;
+                grid-area: right;
+            }
+
+        }
+        @media screen and (min-width: 600px) {
+            body {
+                margin: 1rem;
+            }
+
+            .container {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr 2fr;
+                grid-template-rows: 3fr 6fr 3fr;
+                grid-template-areas:"header header"
+                                    "left center"
+                                    "right right";
+                height: calc(100vh - 2rem);
+            }
+
+            .header {
+                background-color: #E62E2D;
+                grid-area: header;
+            }
+
+            .left {
+                background-color: #73EE2B;
+                grid-area: left;
+                margin-right: 0.5vw;
+                margin-bottom: 0.5vw;
+                margin-top: 0.5vw;
+            }
+
+            .main {
+                background-color: #2734FF;
+                grid-area: center;
+                margin-bottom: 0.5vw;
+                margin-top: 0.5vw;
+            }
+
+            .right {
+                background-color: #E83EFF;
+                grid-area: right;
+            }
+        }
+        /*Achtung: Die Eigenschaft wird von anderen fruher @media screen and (min-width: 600px) geerbt
+        => muss solcher Eigeschaft deaktivieren
+         */
+        @media screen and (min-width: 1200px) {
+            body {
+                margin: 2.5vw 3vw 2.5vw 3vw;
+            }
+
+            .container {
+                display: grid;
+                width: 100%;
+                grid-template-columns: 1fr 3fr 1fr;
+                grid-template-rows: 1fr 2fr;
+                grid-template-areas:
+            "header header header"
+            "left main right";
+                height: calc(100vh - 3vw);
+            }
+
+            .header {
+                background-color: #E62E2D;
+                grid-area: header;
+                margin-bottom: 1vw;
+            }
+
+            .left {
+                background-color: #73EE2B;
+                grid-area: left;
+                margin-right: 1vw;
+                margin-top: 0;
+
+            }
+
+            .main {
+                background-color: #2734FF;
+                grid-area: main;
+                margin-top: 0;
+            }
+
+            .right {
+                background-color: #E83EFF;
+                grid-area: right;
+                margin-left: 1vw;
+                margin-bottom: 0.5vw;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header"></div>
+    <div class="left"></div>
+    <div class ="main"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>
+                        </xmp>
+                        <a href=../u3/3.2_Reponsiv_Grid_Mobil_First.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe3">
+
+            <article>
+                <div class ="title">
+                    <h2>3.3 Wireframe responsive mit Grid</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Implementieren Sie folgende Landing-Page responsiv mit Grid:</h3>
+                        <object type="text/html" data="../u3/3.3_Wireframe%20responsive%20mit%20Grid.html" style="height: 80%; width: auto; "></object>
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Übung3.3</title>
+</head>
+<style>
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.container{
+    width: 100%;
+    overflow: hidden;
+    background-color: #363636;
+    display: flex;
+    justify-content: center;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px 10px;
+    align-items: center;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+}
+nav ul li a:hover{
+    color: #F6DC3D ;
+}
+.content{
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    grid-template-rows: auto  1fr auto;
+    grid-template-areas: "header header" "left right" "footer footer";
+    height: calc(100vh - 40px);
+}
+
+.header{
+    text-align: center;
+    padding-top:  1rem;
+    padding-bottom:  0.5rem;
+    grid-area: header;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.2rem;
+}
+.js-photo{
+    grid-area: left;
+    display: flex;
+    align-items: flex-end;
+}
+img{
+    border-radius: 6px;
+    border: black solid 1px;
+    width: auto;
+    height: 70vh;
+    margin: 0 0 2rem 20rem;
+}
+.js-instructions{
+    grid-area: right;
+    margin: 5rem 0 0 0;
+    text-align: center;
+}
+.js-instructions p{
+    padding-top: 1.5rem;
+    padding-bottom:1.5rem;
+    line-height: 200%;
+}
+.btn{
+    width: 25rem;
+    height: 2rem;
+    background-color: #EC8D35;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius:  6px;
+    border-color: #FD8944;
+    border-style: solid;
+    padding: 0 7rem;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.btn:hover{
+    background-color: #F6DC3D ;
+}
+.btn2{
+    width: 30rem;
+}
+.footer{
+    height: 12vh;
+    bottom:0;
+    width: 100%;
+    text-align: center;
+    padding-top:  1rem;
+    overflow: hidden;
+    color: white;
+    background-color: #363636;
+    grid-area: footer;
+}
+/* For desktop: */
+@media only screen and (max-width: 640px) {
+    .content{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: "header" "left" "right" "foot";
+    }
+    img{
+        height: 40vh;
+    }
+    .header{
+        grid-area: header;
+    }
+    .js-photo{
+        grid-area: left;
+    }
+    .js-instructions{
+        grid-area: right;
+    }
+    .footer{
+        grid-area: foot;
+    }
+}
+
+</style>
+<body>
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="#">The book series</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">The Author</a></li>
+            <li><a href="#">Free resource</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="content">
+    <div class="header"><h1> You dont know JavaScript</h1></div>
+
+    <div class=" js-photo  left">
+        <img src ="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" alt="JS-photo">
+    </div>
+    <div class="js-instructions right">
+        <p>Don't just drift through Javascript</p>
+        <p>Understand how Javascript works</p>
+        <p>Start your journey through the bumpy side of Javascript</p>
+        <button class="btn">ORDER YOUR COPY NOW</button>
+    </div>
+
+    <div class="footer ">
+        <p>The first ebook in the book series is absolutely free</p>
+        <button class="btn btn2">FIND OUT MORE ABOUT THIS OFFER</button>
+    </div>
+</div>
+</body>
+</html>
+                        </xmp>
+                        <a href=../u3/3.3_Wireframe%20responsive%20mit%20Grid.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+    </div>
+</main>
+<!-- javascript -->
+<script src="../u1/L1script.js"></script>
+
+
+</body>
+</html>
