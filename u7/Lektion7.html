@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 7: Funktionale Programmierung</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <!-- extra fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <!-- styles -->
+    <link rel="stylesheet" href="../u1/L1styles.css" />
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="left-side">
+            <!-- Die Link needs fixing -->
+            <a href="../index.html" class="fas fa-laptop-house" style="font-size:2rem;color:#2196F3"></a>
+        </div>
+        <div class="middle">
+            <h1>KW 42</h1>
+        </div>
+    </div>
+</header>
+<main>
+    <nav>
+        <ul>
+            <li><label for="aufgabe1">Aufgabe 1</label></li>
+            <li><label for="aufgabe2">Aufgabe 2</label></li>
+            <li><label for="aufgabe3">Artikel</label></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe1">
+            <article>
+                <div class ="title">
+                    <h2>7.1 Funktionen in JavaScript</h2>
+                </div>
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">curry()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+function curry(fn,arg1) {
+    return function (arg2) {
+        return fn(arg1,arg2);
+    }
+}
+                        </xmp>
+                    </div>
+                </div>
+                <hr class="hr-line">
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">inc()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <p>Version 1:</p>
+                        <p> function inc1(x){ <br>
+                            return addf(1)(x);  <br>
+                            }
+                        </p>
+                        <p>Version 2:</p>
+                        <p> const inc2 = applyf(add)(1); <br>
+                            console.log(inc2(5));
+                        </p>
+
+                        <p>Version 3:</p>
+                        <p> const inc3 = curry(add,1); <br>
+                            console.log(inc3(5));
+                        </p>
+
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">methodize()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <p>function methodize(f){ <br>
+                            return function(x){ <br>
+                            return f(this,x);<br>
+                                } <br>
+                            }<br>
+
+                            Number.prototype.add = methodize(add);<br>
+                            console.log((3).add(4));</p>
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">demethodize()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+function demethodize(f) {
+   return function (x,y) {
+        return f(x,y);
+        };
+   }
+Number.prototype.add = add;
+console.log(demethodize(Number.prototype.add)(5, 6));
+                        </xmp>
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">twice()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+function twice(f){
+    return function(x){
+       return f(x,x);
+    };
+}
+var double = twice(add);
+var square = twice(mul);
+console.log(double(11));
+console.log(square(11));
+                        </xmp>
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">composeu()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+function composeu(f,g){
+    return function (x){
+       return g(f(x));
+    }
+}
+console.log(composeu(double,square)(3));
+                        </xmp>
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">composeb()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+function composeb(f,g){
+   return function (a,b,c){
+       return g(c, f(b,a));
+   }
+}
+ console.log(composeb(add,mul)(2,3,5));
+                        </xmp>
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">once()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+ function once(f){
+      var check = false;
+      return function (a,b) {
+          if(check) {
+               return("Fehlerabbruch!")
+        } else{
+               check = true; // check wird hier außer der Scope verändert werden.
+               return f(a,b);
+               }
+        }
+ }
+ const add_once = once(add);
+ console.log(add_once(3,4));
+ console.log(add_once(3,4));
+                        </xmp>
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">counterf()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+ function counterf(x){
+    return{
+        inc: () => {return ++x},
+        dec: () => {return --x}
+           };
+ }
+ const counter = counterf(10);
+ console.log(counter.inc());
+ console.log(counter.dec());
+                        </xmp>
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">revocalbe()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+function revocalbe(f){
+     return {
+        isRevok: false,
+        invoke: (a) => {
+            if(!this.isRevok){
+               f(a);
+            }else {
+               return ("Sie haben diese Fkt wieder gerufen.")
+                   }
+            },
+        revoke: () => {
+           this.isRevok = true;
+           }
+        };
+ }
+ const temp = revocalbe(add);
+ temp.invoke(7);
+ temp.revoke();
+ console.log(temp.invoke(8));
+                        </xmp>
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+                <div class="faq-container">
+                    <!-- faq question -->
+                    <h1 class="faq-page">vector()</h1>
+                    <!-- faq answer -->
+                    <div class="faq-body">
+                        <xmp>
+function vector(){
+   let v=[];
+   return{
+      append:(x) => {v.push(x);} ,
+      store: (index, x) => {v[index] = x;},
+      get: (index) => {return v[index];}
+      }
+}
+my_vector = vector();
+my_vector.append(7);
+my_vector.store(1,8);
+console.log(my_vector.get(0));
+console.log(my_vector.get(1));
+                        </xmp>
+                    </div>
+                </div>
+                <hr class="hr-line">
+
+
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe2">
+
+            <article>
+                <div class ="title">
+                    <h2>7.2 Textanalyse mit filter-map-reduce</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Schreiben Sie in JavaScript eine Textanalyse. Ermitteln Sie die häufigsten Begriffe im Text
+                            <a href="https://kaul.inf.h-brs.de/ccm/we/ws23/resources/assets/Plagiatsresolution.html">Plagiatsresolution</a> .
+                            Filtern Sie dabei alle <a href="https://de.wikipedia.org/wiki/Stoppwort">Stoppworte</a>  und HTML-Tags.
+                            Reduzieren Sie das Ergebnis auf die 3 häufigsten Begriffe.</h3>
+                        <h5>Hinweis: Eine größere Stoppwort-Liste finden Sie auch unter <a href = "github.com/stopwords-iso/stopwords-de"></a>.</h5>
+                    </div>
+                    <div class="faq-body">
+                        <p>Lösung mit filter-map-reduce </p>
+                        <xmp>
+                            var text;
+                            var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+                            var xhr = new XMLHttpRequest();
+                            xhr.onload = function() {
+                            text = this.responseText;
+                            };
+                            xhr.open("GET", "https://kaul.inf.h-brs.de/ccm/we/ws22/resources/assets/Plagiatsresolution.html", false);
+                            xhr.send();
+
+                            var stopwords = ["a","ab","aber","ach","acht","achte","achten","achter","achtes","ag","alle","allein","allem","allen","aller",
+                            "allerdings","alles","allgemeinen","als","also","am","an","ander","andere","anderem","anderen","anderer","anderes","anderm",
+                            "andern","anderr","anders","au","auch","auf","aus","ausser","ausserdem","außer","außerdem","b","bald","bei","beide","beiden",
+                            "beim","beispiel","bekannt","bereits","besonders","besser","besten","bin","bis","bisher","bist","c","d","d.h","da","dabei",
+                            "dadurch","dafür","dagegen","daher","dahin","dahinter","damals","damit","danach","daneben","dank","dann","daran","darauf",
+                            "daraus","darf","darfst","darin","darum","darunter","darüber","das","dasein","daselbst","dass","dasselbe","davon","davor","dazu",
+                            "dazwischen","daß","dein","deine","deinem","deinen","deiner","deines","dem","dementsprechend","demgegenüber","demgemäss","demgemäß",
+                            "demselben","demzufolge","den","denen","denn","denselben","der","deren","derer","derjenige","derjenigen","dermassen","dermaßen","derselbe",
+                            "derselben","des","deshalb","desselben","dessen","deswegen","dich","die","diejenige","diejenigen","dies","diese","dieselbe","dieselben",
+                            "diesem","diesen","dieser","dieses","dir","doch","dort","drei","drin","dritte","dritten","dritter","drittes","du","durch","durchaus","durfte",
+                            "durften","dürfen","dürft","e","eben","ebenso","ehrlich","ei","ei,","eigen","eigene","eigenen","eigener","eigenes","ein","einander","eine","einem",
+                            "einen","einer","eines","einig","einige","einigem","einigen","einiger","einiges","einmal","eins","elf","en","ende","endlich","entweder","er","ernst",
+                            "erst","erste","ersten","erster","erstes","es","etwa","etwas","euch","euer","eure","eurem","euren","eurer","eures","f","folgende","früher","fünf",
+                            "fünfte","fünften","fünfter","fünftes","für","g","gab","ganz","ganze","ganzen","ganzer","ganzes","gar","gedurft","gegen","gegenüber","gehabt","gehen",
+                            "geht","gekannt","gekonnt","gemacht","gemocht","gemusst","genug","gerade","gern","gesagt","geschweige","gewesen","gewollt","geworden","gibt","ging",
+                            "gleich","gott","gross","grosse","grossen","grosser","grosses","groß","große","großen","großer","großes","gut","gute","guter","gutes","h","hab","habe",
+                            "haben","habt","hast","hat","hatte","hatten","hattest","hattet","heisst","her","heute","hier","hin","hinter","hoch","hätte","hätten","i","ich","ihm",
+                            "ihn","ihnen","ihr","ihre","ihrem","ihren","ihrer","ihres","im","immer","in","indem","infolgedessen","ins","irgend","ist","j","ja","jahr","jahre",
+                            "jahren","je","jede","jedem","jeden","jeder","jedermann","jedermanns","jedes","jedoch","jemand","jemandem","jemanden","jene","jenem","jenen","jener",
+                            "jenes","jetzt","k","kam","kann","kannst","kaum","kein","keine","keinem","keinen","keiner","keines","kleine","kleinen","kleiner","kleines","kommen",
+                            "kommt","konnte","konnten","kurz","können","könnt","könnte","l","lang","lange","leicht","leide","lieber","los","m","machen","macht","machte","mag",
+                            "magst","mahn","mal","man","manche","manchem","manchen","mancher","manches","mann","mehr","mein","meine","meinem","meinen","meiner","meines","mensch",
+                            "menschen","mich","mir","mit","mittel","mochte","mochten","morgen","muss","musst","musste","mussten","muß","mußt","möchte","mögen","möglich","mögt",
+                            "müssen","müsst","müßt","n","na","nach","nachdem","nahm","natürlich","neben","nein","neue","neuen","neun","neunte","neunten","neunter","neuntes",
+                            "nicht","nichts","nie","niemand","niemandem","niemanden","noch","nun","nur","o","ob","oben","oder","offen","oft","ohne","ordnung","p","q","r","recht",
+                            "rechte","rechten","rechter","rechtes","richtig","rund","s","sa","sache","sagt","sagte","sah","satt","schlecht","schluss","schon","sechs","sechste",
+                            "sechsten","sechster","sechstes","sehr","sei","seid","seien","sein","seine","seinem","seinen","seiner","seines","seit","seitdem","selbst","sich","sie",
+                            "sieben","siebente","siebenten","siebenter","siebentes","sind","so","solang","solche","solchem","solchen","solcher","solches","soll","sollen","sollst",
+                            "sollt","sollte","sollten","sondern","sonst","soweit","sowie","später","startseite","statt","steht","suche","t","tag","tage","tagen","tat","teil","tel",
+                            "tritt","trotzdem","tun","u","uhr","um","und","uns","unse","unsem","unsen","unser","unsere","unserer","unses","unter","v","vergangenen","viel","viele",
+                            "vielem","vielen","vielleicht","vier","vierte","vierten","vierter","viertes","vom","von","vor","w","wahr","wann","war","waren","warst","wart","warum",
+                            "was","weg","wegen","weil","weit","weiter","weitere","weiteren","weiteres","welche","welchem","welchen","welcher","welches","wem","wen","wenig","wenige",
+                            "weniger","weniges","wenigstens","wenn","wer","werde","werden","werdet","weshalb","wessen","wie","wieder","wieso","will","willst","wir","wird","wirklich",
+                            "wirst","wissen","wo","woher","wohin","wohl","wollen","wollt","wollte","wollten","worden","wurde","wurden","während","währenddem","währenddessen","wäre","würde",
+                            "würden","x","y","z","z.b","zehn","zehnte","zehnten","zehnter","zehntes","zeit","zu","zuerst","zugleich","zum","zunächst","zur","zurück","zusammen","zwanzig",
+                            "zwar","zwei","zweite","zweiten","zweiter","zweites","zwischen","zwölf","über","überhaupt","übrigens"];
+
+
+                            const words = // Alle HTML-Tags entfernen
+                            text.replace(/[^a-zA-Z ]/g, '').split(' ')
+                            .map(word => word.toLowerCase())
+                            .filter(word => word && !stopwords.includes(word) && word.length > 1)
+                            .reduce((freq, word) => {
+                            freq[word] = (freq[word] || 0) + 1;
+                            return freq;
+                            }, {});
+
+                            console.log(
+                            Object.entries(words)
+                            .sort((a, b) => b[1] - a[1])
+                            .slice(0, 3)
+                            .map(entry => entry[0])
+                            )
+                        </xmp>
+
+                        <p>Lösung ohne filter-map-reduce </p>
+                        <xmp>
+                            var stopwords = ["a","ab","aber","ach","acht","achte","achten","achter","achtes","ag","alle","allein","allem","allen","aller","allerdings","alles","allgemeinen","als","also","am","an","ander","andere","anderem","anderen","anderer","anderes","anderm","andern","anderr","anders","au","auch","auf","aus","ausser","ausserdem","außer","außerdem","b","bald","bei","beide","beiden","beim","beispiel","bekannt","bereits","besonders","besser","besten","bin","bis","bisher","bist","c","d","d.h","da","dabei","dadurch","dafür","dagegen","daher","dahin","dahinter","damals","damit","danach","daneben","dank","dann","daran","darauf","daraus","darf","darfst","darin","darum","darunter","darüber","das","dasein","daselbst","dass","dasselbe","davon","davor","dazu","dazwischen","daß","dein","deine","deinem","deinen","deiner","deines","dem","dementsprechend","demgegenüber","demgemäss","demgemäß","demselben","demzufolge","den","denen","denn","denselben","der","deren","derer","derjenige","derjenigen","dermassen","dermaßen","derselbe","derselben","des","deshalb","desselben","dessen","deswegen","dich","die","diejenige","diejenigen","dies","diese","dieselbe","dieselben","diesem","diesen","dieser","dieses","dir","doch","dort","drei","drin","dritte","dritten","dritter","drittes","du","durch","durchaus","durfte","durften","dürfen","dürft","e","eben","ebenso","ehrlich","ei","ei,","eigen","eigene","eigenen","eigener","eigenes","ein","einander","eine","einem","einen","einer","eines","einig","einige","einigem","einigen","einiger","einiges","einmal","eins","elf","en","ende","endlich","entweder","er","ernst","erst","erste","ersten","erster","erstes","es","etwa","etwas","euch","euer","eure","eurem","euren","eurer","eures","f","folgende","früher","fünf","fünfte","fünften","fünfter","fünftes","für","g","gab","ganz","ganze","ganzen","ganzer","ganzes","gar","gedurft","gegen","gegenüber","gehabt","gehen","geht","gekannt","gekonnt","gemacht","gemocht","gemusst","genug","gerade","gern","gesagt","geschweige","gewesen","gewollt","geworden","gibt","ging","gleich","gott","gross","grosse","grossen","grosser","grosses","groß","große","großen","großer","großes","gut","gute","guter","gutes","h","hab","habe","haben","habt","hast","hat","hatte","hatten","hattest","hattet","heisst","her","heute","hier","hin","hinter","hoch","hätte","hätten","i","ich","ihm","ihn","ihnen","ihr","ihre","ihrem","ihren","ihrer","ihres","im","immer","in","indem","infolgedessen","ins","irgend","ist","j","ja","jahr","jahre","jahren","je","jede","jedem","jeden","jeder","jedermann","jedermanns","jedes","jedoch","jemand","jemandem","jemanden","jene","jenem","jenen","jener","jenes","jetzt","k","kam","kann","kannst","kaum","kein","keine","keinem","keinen","keiner","keines","kleine","kleinen","kleiner","kleines","kommen","kommt","konnte","konnten","kurz","können","könnt","könnte","l","lang","lange","leicht","leide","lieber","los","m","machen","macht","machte","mag",
+                            "magst","mahn","mal","man","manche","manchem","manchen","mancher","manches","mann","mehr","mein","meine","meinem","meinen","meiner","meines","mensch","menschen","mich","mir","mit","mittel","mochte","mochten","morgen","muss","musst","musste","mussten","muß","mußt","möchte","mögen","möglich","mögt","müssen","müsst","müßt","n","na","nach","nachdem","nahm","natürlich","neben","nein","neue","neuen","neun","neunte","neunten","neunter","neuntes","nicht","nichts","nie","niemand","niemandem","niemanden","noch","nun","nur","o","ob","oben","oder","offen","oft","ohne","ordnung","p","q","r","recht","rechte","rechten","rechter","rechtes","richtig","rund","s","sa","sache","sagt","sagte","sah","satt","schlecht","schluss","schon","sechs","sechste","sechsten","sechster","sechstes","sehr","sei","seid","seien","sein","seine","seinem","seinen","seiner","seines","seit","seitdem","selbst","sich","sie","sieben","siebente","siebenten","siebenter","siebentes","sind","so","solang","solche","solchem","solchen","solcher","solches","soll","sollen","sollst","sollt","sollte","sollten","sondern","sonst","soweit","sowie","später","startseite","statt","steht","suche","t","tag","tage","tagen","tat","teil","tel","tritt","trotzdem","tun","u","uhr","um","und","uns","unse","unsem","unsen","unser","unsere","unserer","unses","unter","v","vergangenen","viel","viele","vielem","vielen","vielleicht","vier","vierte","vierten","vierter","viertes","vom","von","vor","w","wahr","wann","war","waren","warst","wart","warum","was","weg","wegen","weil","weit","weiter","weitere","weiteren","weiteres","welche","welchem","welchen","welcher","welches","wem","wen","wenig","wenige","weniger","weniges","wenigstens","wenn","wer","werde","werden","werdet","weshalb","wessen","wie","wieder","wieso","will","willst","wir","wird","wirklich","wirst","wissen","wo","woher","wohin","wohl","wollen","wollt","wollte","wollten","worden","wurde","wurden","während","währenddem","währenddessen","wäre","würde","würden","x","y","z","z.b","zehn","zehnte","zehnten","zehnter","zehntes","zeit","zu","zuerst","zugleich","zum","zunächst","zur","zurück","zusammen","zwanzig","zwar","zwei","zweite","zweiten","zweiter","zweites","zwischen","zwölf","über","überhaupt","übrigens"]
+
+                            var text;
+                            var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+                            var xhr = new XMLHttpRequest();
+                            xhr.onload = function() {
+                            text = this.responseText;
+                            };
+                            xhr.open("GET", "https://kaul.inf.h-brs.de/ccm/we/ws22/resources/assets/Plagiatsresolution.html", false);
+                            xhr.send();
+
+                            function analyze(text) {
+                            // Alle HTML-Tags entfernen
+                            text = text.replace(/<[^>]*>/g, '');
+
+                            // Alle Satzzeichen entfernen und Text in Wörter teilen
+                            const words = text.replace(/[^a-zA-Z ]/g, '').split(' ');
+
+                            const wordFrequency = {};
+                            for (const word of words) {
+                            wordFrequency[word] = (wordFrequency[word] || 0) + 1;
+                            }
+
+                            for (const stopword of stopwords) {
+                            delete wordFrequency[stopword];
+                            }
+
+                            const top3Words = Object.keys(wordFrequency).sort((a, b) => wordFrequency[b] - wordFrequency[a]).slice(1, 4);
+
+                            return top3Words;
+                            }
+                            console.log("die 3 häufigsten Begriffe sind: " + analyze(text));
+                        </xmp>
+                        <a href=../u7/Textanalyse2.js>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+
+
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe3">
+            <article>
+                <div class ="title">
+                    <h2>Kurzer Erklärartikel zu „Spread“-Operator mit Beispiel</h2>
+                </div>
+
+                <div class="introduce-text">
+                    <p>
+                        Der Spread-Operator in JavaScript wird mit drei aufeinanderfolgenden Punkten `...` dargestellt.
+                        Er ermöglicht es, Elemente eines Arrays oder Objekteigenschaften auf eine sehr flexible Weise zu expandieren,
+                        wo 0 oder mehr Argumente (für Funktionsaufrufe) oder Elemente (für Array-Literale) erwartet werden, oder um
+                        Objekteigenschaften in Objekt-Literalen zu kopieren.
+                    </p>
+                    <p>Hier sind einige Anwendungsbeispiele:</p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3>In Arrays:</h3>
+                        <p>Zum Kombinieren oder Klonen von Arrays:</p>
+
+                    </div>
+                    <div class="faq-body">
+                        <p>
+                            let orginalArray = [1, 2, 3]; <br>
+                            let copyArray = [...orginalArray]; // Klonen von arr1 <br>
+                            console.log(copyArray); // Output: [1, 2, 3] <br>
+                            console.log(originalArray === copyArray); Output: false (Sie sind unterschiedliche Objekte)<br>
+                            let expendArray= [...orginalArray, 4, 5]; // Kombinieren von orginalArray mit weiteren Elementen<br>
+                            let concatenatedArray = [...orginalArray, ... orginalArray];<br>
+                            console.log(concatenatedArray);  // Output: [1, 2, 3, 1, 2, 3]<br>
+                            Diese gilt auch für String. <br>
+
+                        </p>
+                    </div>
+                    <hr class="hr-line">
+
+                    <div class="faq-page">
+                        <h3>In Funktionen:</h3>
+                        <p>Zum Übergeben von Array-Elementen als separate Argumente an eine Funktion:</p>
+
+                    </div>
+                    <div class="faq-body">
+                        <p>
+                            function sum(a, b, c) { <br>
+                            return a + b + c; <br>
+                            }<br>
+                            let numbers = [1, 2, 3];<br>
+                            console.log(sum(...numbers)); // Gibt 6 aus, da die Elemente des Arrays als separate Argumente übergeben werden.
+                        </p>
+                    </div>
+                    <hr class="hr-line">
+
+                    <div class="faq-page">
+                        <h3>In Objekten:</h3>
+                        <p>Zum Kopieren oder Zusammenführen von Objekteigenschaften:</p>
+
+                    </div>
+                    <div class="faq-body">
+                        <p>
+                            let obj1 = { a: 1, b: 2 };<br>
+                            let obj2 = { ...obj1, c: 3 }; // Erstellt ein neues Objekt mit Eigenschaften von obj1 und einer zusätzlichen Eigenschaft c <br>
+                            Der Spread-Operator ist besonders nützlich, um Code kürzer und lesbarer zu machen und um Operationen <br>
+                            wie das Kopieren oder Kombinieren von Datenstrukturen auf eine elegante Art und Weise durchzuführen.
+                        </p>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+    </div>
+</main>
+<!-- javascript -->
+<script src="../u1/L1script.js"></script>
+
+
+</body>
+</html>

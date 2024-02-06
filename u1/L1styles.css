@@ -290,6 +290,18 @@ input[type="radio"]:not(:checked) ~ article{
         box-sizing: border-box;
     }
 }
+
+@media only screen and (max-width: 300px) {
+    nav {
+        width: 100%;
+        position: static;
+    }
+
+    nav li {
+        width: 50%;
+        box-sizing: border-box;
+    }
+}
 /* Aufgabe 6 */
 .faq-heading{
     border-bottom: #777;
@@ -370,6 +382,21 @@ button:hover {
     background-color: #45a049;
 }
 
-/*Ubung 2*/
+/*Ubung 6*/
+
+ pre code {
+     display: block;
+     padding: 0.5rem;
+     border: 1px solid #c7254e;
+     font-size: medium;
+ }
+ pre, pre code{
+     overflow: auto;
+ }
+ code{
+     background-color: var(--clr-primary-7);
+     border-radius: 4px;
+     font-family: monospace;
+ }
 
 

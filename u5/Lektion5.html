@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 5: Document Object Model (DOM)</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <!-- extra fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <!-- styles -->
+    <link rel="stylesheet" href="../u1/L1styles.css" />
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="left-side">
+            <!-- Die Link needs fixing -->
+            <a href="../index.html" class="fas fa-laptop-house" style="font-size:2rem;color:#2196F3"></a>
+        </div>
+        <div class="middle">
+            <h1>KW 42</h1>
+        </div>
+    </div>
+</header>
+<main>
+    <nav>
+        <ul>
+            <li><label for="aufgabe1">Aufgabe 1</label></li>
+            <li><label for="aufgabe2">Aufgabe 2</label></li>
+            <li><label for="aufgabe3">Aufgabe 3</label></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe1">
+            <article>
+                <div class ="title">
+                    <h2>5.1 Performanz-Messungen von DOM-Operationen</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Implementieren Sie Performanz-Messungen zum Vergleich von
+                            <mark>innerHTML</mark>,
+                            <mark>innerText</mark>,
+                            <mark>textContent</mark> und
+                            <mark>outerHTML</mark>
+                        </h3>
+
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+                            <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Übung 5.1</title>
+    <style>
+        th, td {
+            border: 2px solid;
+        }
+    </style>
+</head>
+<body>
+<h1>5.1. Performanz-Messungen von DOM-Operationen</h1>
+<p>Vergleichstabelle</p>
+<table>
+    <tr>
+        <th>Funktionen</th>
+        <th>Zeitdauer zum Ausführen</th>
+    </tr>
+    <tr>
+        <td><p id="innerHTMLTest">innerHTML</p></td>
+        <td><p id="innerHTMLResult"></p></td>
+    </tr>
+
+    <tr>
+        <td><p id="innerTextTest">innerText</p></td>
+        <td><p id="innerTextResult"></p></td>
+    </tr>
+
+    <tr>
+        <td><p id="textContentTest">textContent</p></td>
+        <td><p id="textContentResult"></p></td>
+    </tr>
+
+    <tr>
+        <td><p id="outerHTMLTest">outerHTML</p></td>
+        <td><p id="outerHTMLResult"></p></td>
+    </tr>
+</table>
+
+<script>
+    // 4 Fuktionen schreiben
+    // Die Eingangszeit in performance.now() speichern
+    // In jeder Fkt geben wir die aktuelle Zeit minus die Eingangszeit zurück
+
+    function innerHTMLFunction(){
+        const innerHtmlStart = performance.now();
+        document.getElementById("innerHTMLTest").innerHTML = "probieren";
+        return performance.now() - innerHtmlStart;
+    }
+
+    function innerTextFunction(){
+        const innerTextStart = performance.now();
+        document.getElementById("innerTextTest").innerText = "probieren";
+        return performance.now() - innerTextStart;
+    }
+
+    function textContentFunction(){
+        const textContentStart = performance.now();
+        document.getElementById("textContentTest").textContent = "probieren";
+        return performance.now() - textContentStart;
+    }
+    // Bei 1.Mal ersetzt die outerHTMLFunction() schon das ganze Element <p id="outerHTMLTest">outerHTML</p> zu "probieren".
+    // Bei 2. Mal findet er nicht mehr das Element <p .....></p>.... =>Fehler!
+    // outerHTML überschreibt das Element, während innerHTML alle Kinder, aber nicht das Element selber ersetzt.
+    function outerHTMLFunction(){
+        const outerHtmlStart = performance.now();
+        document.getElementById("outerHTMLTest").outerHTML = "<p id=\"outerHTMLTest\">probieren</p>";
+        return performance.now() - outerHtmlStart;
+    }
+
+    // die Funktion vorher 1000 mal als Warmstart durchführen
+    // die Mittel von 100000 Durchläufe jeder Funktion berechnen
+    function durationMessen(func) {
+        let summe = 0;
+        for(var i=0; i<1000; i++){
+            func();
+        }
+        for(var i=0; i < 100000; i++){
+            summe+=func();
+        }
+        return summe/100000;
+
+    }
+    // Ergebnisse ausdrücken
+
+
+
+    document.getElementById("innerHTMLResult").innerHTML= durationMessen(()=>innerHTMLFunction());
+    document.getElementById("innerTextResult").innerHTML= durationMessen(()=>innerTextFunction());
+    document.getElementById("textContentResult").innerHTML= durationMessen(()=>textContentFunction());
+    document.getElementById("outerHTMLResult").innerHTML= durationMessen(()=>outerHTMLFunction());
+
+    document.getElementById("innerHTMLTest").innerHTML="innerHTML";
+    document.getElementById("innerTextTest").innerHTML="innerText";
+    document.getElementById("textContentTest").innerHTML="textContent";
+    document.getElementById("outerHTMLTest").innerHTML="outerHTML";
+
+</script>
+</body>
+</html>
+                        </xmp>
+                        <a href=../u5/Performanz-Messungen%20von%20DOM-Operationen.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe2">
+            <article>
+                <div class ="title">
+                    <h2>5.2 Rednerliste mit Zeitmessung</h2>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Implementieren Sie die interaktive Anwendung "Rednerliste mit Zeitmessung" selbstständig in JavaScript
+                            durch Nutzung der <a href="https://www.w3schools.com/js/js_htmldom.asp">DOM-API</a>  und der <a href="https://www.w3schools.com/js/js_timing.asp">Timer-Funktionen </a>.
+                        </h3>
+
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #add-speaker-container{
+            white-space: nowrap;
+        }
+        #speaker-name, input, #add-speaker {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<h1>Rednerliste</h1>
+<div id="add-speaker-container">
+    <p id="speaker-name">Neuer Redner:</p>
+    <input type="text" placeholder="Enter Name..." id="input">
+    <button id = "add" onclick="addSpeaker()">Hinzufügen</button>
+</div>
+<ul id="speaker-container"></ul>
+
+<script>
+    function formatTime(seconds, minuten, hours) {
+        let viewSeconds, viewMinuten, viewHours;
+        if(seconds < 10){
+            viewSeconds = "0" + seconds;
+        } else{
+            viewSeconds = "" + seconds;
+        }
+        if(minuten < 10){
+            viewMinuten = "0" + minuten;
+        }else{
+            viewMinuten ="" + minuten;
+        }
+        if(hours < 10){
+            viewHours = "0" + hours;
+        }else{
+            viewHours = "" + hours;
+        }
+        return  viewHours + ":" + viewMinuten + ":" + viewSeconds;
+    }
+    // Method for increasing the time every second (like a stop watch)
+    function createInterval(timeSpan, index) {
+        return setInterval(function (){
+            speaker[index].seconds++;
+            if(speaker[index].seconds === 60){
+                speaker[index].minuten++;
+                speaker[index].seconds = 0;
+            }
+            if(speaker[index].minuten == 60){
+                speaker[index].hours++;
+                speaker[index].minuten = 0;
+            }
+
+            timeSpan.innerHTML = formatTime(speaker[index].seconds, speaker[index].minuten, speaker[index].hours);
+        }, 1000);
+    }
+
+    class Speaker{
+
+        constructor(name, hour, minute, second, button, index) {
+            this.name = name;
+            this.hours = hour;
+            this.minuten = minute;
+            this.seconds = second;
+            this.index = index;
+            this.spanTime = document.createElement('span');
+            this.spanTime.innerHTML = formatTime(this.seconds, this.minuten, this.hours);
+            this.spanTime.setAttribute("id", "time" + this.index);
+            this.button = button;
+            this.button.addEventListener("click", () => startStop(button, this.index));
+            this.button.innerHTML = "Stopp!";
+            this.button.setAttribute("id", "startStopButton" + this.index);
+            this.interval = createInterval(this.spanTime, this.index);
+        }
+        appendAll(){
+            let listItemElement = document.createElement('li');
+            listItemElement.append(this.name, " ", this.spanTime, " ", this.button);
+            return listItemElement;
+        }
+    }
+
+    let speaker = [];
+    let speakerIndex = 0;
+    document.getElementById('input').addEventListener("keyup",(key) => {
+        if(key.key === 'Enter'){
+            addSpeaker();
+        }
+    })
+
+    function addSpeaker() {
+        const speakerName = document.getElementById('input');
+        if(speakerName.value !== ''){
+            speaker[speakerIndex] = new Speaker(speakerName.value, 0, 0, 0, document.createElement('button'),speakerIndex);
+            document.getElementById('speaker-container').appendChild(speaker[speakerIndex].appendAll());
+            speakerIndex++;
+            speakerName.value = '';
+            stopAllButThis(speakerIndex - 1);
+        }
+
+    }
+
+    function startStop(element, index) {
+        if(element.innerHTML === 'Stopp!'){
+            element.innerHTML = 'Start!';
+            // stop time-increasing method.
+            clearInterval(speaker[index].interval);
+        }else{
+            element.innerHTML = 'Stopp!';
+            // create time-increasing method.
+            speaker[index].interval = createInterval(speaker[index].spanTime, index)
+            stopAllButThis(index)
+        }
+    }
+
+    function stopAllButThis(speakerIndex) {
+        for (let i = 0; i < speaker.length; i++) {
+            if(i !==speakerIndex) {
+                clearInterval(speaker[i].interval);
+                document.getElementById("startStopButton" + i).innerHTML ="Start!";
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
+                        </xmp>
+                        <a href=../u5/Rednerliste%20mit%20Zeitmessung.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe3">
+
+            <article>
+                <div class ="title">
+                    <h2>5.3 TopSort als Web-App</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Schreiben Sie eine Weboberfläche, in der man beliebige Beziehungen (Vorrang-Relationen) eingeben kann,
+                            für die dann die topologische Sortierung per Knopfdruck auf der Webseite ausgegeben wird.</h3>
+                        <h3>Für die Eingabe können Sie HTML5-Eingabefelder oder das HTML-Attribut <mark>contenteditable</mark> verwenden.
+                        </h3>
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    #inputField {
+        width: 40%;
+        height: 2rem;
+    }
+
+    #result {
+        margin-top: 20px;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Übung 5.3 Top Sort</title>
+
+</head>
+<body>
+<h1 title>Übung 5.3 </h1>
+<h2>Topologische Sortierung</h2>
+
+<h3>Vorrangrelationen eingeben </h3>
+<p>Geben Sie hier was sie vorher und später machen in diesem Format müssen, zb : [["schlafen","studieren"], ["essen","studieren"],["studieren","prüfen"]] </p>
+<div contenteditable="true" id="inputField"></div>
+
+<button onclick="topSortResult()">Sortieren</button>
+
+<div id="result">
+    <!-- Hier wird das Ergebnis der topologischen Sortierung angezeigt -->
+</div>
+
+<script>
+    var relationInput = document.getElementById('inputField');
+    // Es sollte ein Array wie elements = ["schlafen", "studieren", "essen", "prüfen" ]; zuruckgeben.
+    var elementInput = function (){
+        var elements =[];
+        relationInput.forEach(function (item){
+            if(elements.includes(item[0])){
+                elements.push(item[0]);
+            }
+            if(elements.includes(item[1])){
+                elements.push(item[1]);
+            }
+            return elements;
+        })
+
+    }
+    function vorgaenge_bestimmen(relations, elements){
+        var order_number ={};
+        elements.forEach(function (item) {
+            order_number[item] = {name: item, number: 0, nachfolger:[]};
+        })
+
+        relations.forEach(function (items){
+            order_number[items[1]].number +=1;
+            if(!order_number[items[0]].nachfolger.includes(items[1])){
+                order_number[items[0]].nachfolger.push(items[1]);
+            }
+        })
+
+        return order_number;
+    }
+
+    function topsort(relations, elements) {
+        var order_number = vorgaenge_bestimmen(relations, elements)
+        console.log(order_number);
+        var next = [];
+        var sortierung = [];
+
+        for (key in order_number) {
+            if (order_number[key].number === 0) {
+                next.push(key);
+            }
+        }
+        var k = 1; // Zählt die Durchläufe um ggfs. Zyklen zu erkennen
+
+        // Falls es gibt keine Elemente in elements mehr
+        if (next.length === 0) {
+            return -2;
+        }
+
+        do {
+            var current_item = next.pop();
+            sortierung.push(current_item);
+            k += 1;
+            order_number[current_item].nachfolger.forEach(function (item) {
+                if (order_number[item].number > 1) {
+                    order_number[item].number -= 1;
+                } else {
+                    next.push(item);
+                }
+            })
+        } while (next.length !== 0);
+
+        // Zyklus erkannt
+        if (k !== elements.length + 1) {
+            return -1;
+        }
+        return sortierung;
+    }
+    function topSortResult(){
+        console.log(topsort(relationInput, elementInput));
+    }
+</script>
+</body>
+</html>
+                        </xmp>
+                        <a href=../u5/TopSort%20als%20WebApp.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+    </div>
+</main>
+
+<!-- javascript -->
+<script src="../u1/L1script.js"></script>
+
+
+</body>
+</html>
