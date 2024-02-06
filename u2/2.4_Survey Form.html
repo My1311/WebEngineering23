@@ -27,36 +27,37 @@
         }
         .label-tab{
             display: inline-block;
-            width: 44%;
+            width: 54%;
             text-align: right;
             vertical-align: middle;/*design position von *Name in the middle with the input*/
+            margin-right: 10px ;
         }
         .input {
             text-align: left;
             padding: 5px 2px;
-            width: 16rem ;
+            width: 10rem ;
+            height: 1rem;
         }
         .question-tab{
             display: inline-block;
-            width: 44%;
+            width: 54%;
             text-align: right;
             vertical-align: top;/* position von question  in  top  im Vergleich zu answer (choices)*/
+            margin-right: 10px ;
         }
 
-        .answer{
-            display: inline-block;
-            text-align: left;
-            width: 54%;
-        }
-        .answer-choices{
+        .answer, .answer-choices {
             display: inline-block;
             text-align:left;
-            width: 54%;
+            width: 34%;
         }
+
         .select-box{
             padding: 5px 0px;
-            background-color: #f0f0f0;
-            width: 8rem ;
+            background-color: #ffffff;
+            width: auto ; /* nicht funktioniert*/
+            height: 2.5rem;
+            border-radius: 3px;
         }
     </style>
 </head>
@@ -117,7 +118,7 @@
                     <div class="answer">
                         <div><input type="radio" name="suggest"><label>Definitely</label></div>
                         <div><input type="radio" name="suggest"><label>Maybe</label></div>
-                        <div><input type="radio" name="suggest"><label>Not sure</label></div>
+                        <div><input type="radio" name="suggest" checked="checked"><label>Not sure</label></div>
                     </div>
                 </div>
                 <div class="getInformationQuestion">
@@ -142,9 +143,9 @@
                         <label>Things that should be improved in the future (Check all that apply)</label>
                     </div>
                     <div class="answer">
-                        <div><input type="radio" name="suggest"><label>Front-end Projects</label></div>
-                        <div><input type="radio" name="suggest"><label>Back-end Projects</label></div>
-                        <div><input type="radio" name="suggest"><label>Data Visualization</label></div>
+                        <div><input type="checkbox" name="suggest" checked="checked"><label>Front-end Projects</label></div>
+                        <div><input type="checkbox" name="suggest" checked="checked"><label>Back-end Projects</label></div>
+                        <div><input type="checkbox" name="suggest"><label>Data Visualization</label></div>
                     </div>
                 </div>
 
