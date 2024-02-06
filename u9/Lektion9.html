@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 9: Scalable Vector Graphics (SVG)</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <!-- extra fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <!-- styles -->
+    <link rel="stylesheet" href="../u1/L1styles.css" />
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="left-side">
+            <!-- Die Link needs fixing -->
+            <a href="../index.html" class="fas fa-laptop-house" style="font-size:2rem;color:#2196F3"></a>
+        </div>
+        <div class="middle">
+            <h1>KW 42</h1>
+        </div>
+    </div>
+</header>
+<main>
+    <nav>
+        <ul>
+            <li><label for="aufgabe1">Aufgabe 1</label></li>
+            <li><label for="aufgabe3">Aufgabe 3</label></li>
+            <li><label for="aufgabe4">Demonstration</label></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe1">
+            <article>
+                <div class ="title">
+                    <h2>9.1 SVG Grafik von Hand erstellen</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3>Codieren Sie eine HTML-Datei mit Inline SVG, sodass sich folgendes Aussehen ergibt:</h3>
+                        <img src="../images/use_the_platform.png" alt="html_wireframe" width="500" height="auto">
+                        <h3>Fügen Sie als Hover-Effekt eine CSS-Animation hinzu, die die Größe der SVG-Grafik verdoppelt,
+                            wenn man mit dem Cursor über die Grafik geht.</h3>
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+                            <!DOCTYPE html>
+                            <html lang="en">
+                            <head>
+                                <meta charset="UTF-8">
+                                <title>SVG Grafik von Hand erstellen</title>
+                                <style>
+                                    text{
+                                        fill: white;
+                                        font-weight: 400;
+                                        font-size: 50px;
+                                        font-family: Arial, sans-serif;
+                                    }
+                                    line{
+                                        stroke: white;
+                                        stroke-width: 4;
+                                    }
+                                    svg:hover {
+                                        transform: scale(2);
+                                    }
+                                    svg {
+                                        transition: all 0s;
+                                        transform-origin: 10% 0%;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                            <h1>SVG Use The Platform</h1>
+                            <svg viewBox="" width="300" height="300">
+                                <rect width="300"height="300" style="fill: rgb(184, 101, 101);"></rect>
+                                <text x="30" y="70">Use</text>
+                                <line x1="30" y1="85" x2="275" y2="85"></line>
+                                <text x="30" y="165">The</text>
+                                <line x1="30" y1="180" x2="275" y2="180"></line>
+                                <text x="30" y="265">Platform</text>
+                                <line x1="30" y1="280" x2="275" y2="280"></line>
+                            </svg>
+                            </body>
+                            </html>
+                        </xmp>
+                        <a href=../u9/SVG_Grafik.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe3">
+            <article>
+                <div class ="title">
+                    <h2>9.3 Interaktive SVG Grafik</h2>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Implementieren Sie das Spiel Tic-Tac-Toe als HTML-Datei mit Inline SVG, CSS und JS.
+                        </h3>
+                    </div>
+                    <div class="faq-body">
+                        <h4>HTML und CSS</h4>
+                        <xmp>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Einführung in Web Engineering</title>
+    <link href="/docs/style.css" rel="stylesheet">
+    <style>
+        #ttt
+        {
+            border-collapse: collapse;
+        }
+
+        #ttt td
+        {
+            width: 4em;
+            height: 4em;
+            border: 1px solid;
+        }
+
+        #ttt svg
+        {
+            display: block;
+            width: 100%;
+            height: 100%;
+            stroke: white;
+            stroke-width: 0.1;
+        }
+
+        #ttt .xDisplay svg
+        {
+            stroke: black;
+        }
+
+        #ttt .oDisplay svg
+        {
+            stroke: black;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<main>
+    <nav>
+        <object type="text/html" data="/docs/sidebar.html" style="height: 100%;"></object>
+    </nav>
+    <article>
+        <svg>
+            <symbol id="circle" viewBox="0 0 1 1">
+                <circle cx="0.5" cy="0.5" r="0.4" fill="none"/>
+            </symbol>
+            <symbol id="cross" viewBox="0 0 1 1">
+                <line x1="0.1" y1="0.1" x2="0.9" y2="0.9"/>
+                <line x1="0.1" y1="0.9" x2="0.9" y2="0.1"/>
+            </symbol>
+        </svg>
+        <h1 id="turn">X ist drann!</h1>
+
+        <table id="ttt">
+            <tr>
+                <td id="0,0"/>
+                <td id="0,1"/>
+                <td id="0,2"/>
+            </tr>
+            <tr>
+                <td id="1,0"/>
+                <td id="1,1"/>
+                <td id="1,2"/>
+            </tr>
+            <tr>
+                <td id="2,0"/>
+                <td id="2,1"/>
+                <td id="2,2"/>
+            </tr>
+        </table>
+        <script src="game.js"></script>
+    </article>
+</main>
+</body>
+</html>
+                            </xmp>
+                        <h4>Javascript</h4>
+                        <xmp>
+document.querySelector('#ttt').addEventListener('click', onClickMethode);
+
+let turn = true;
+
+const turnDisplay = document.getElementById('turn');
+
+const cells = [];
+cells[0] = ['', '', ''];
+cells[1] = ['', '', ''];
+cells[2] = ['', '', ''];
+
+class cell {
+   constructor(col, row) {
+       this.col = col;
+       this.row = row;
+       this.clicked = false;
+       this.owner = '';
+   }
+
+   setOwner(owner) {
+       this.owner = owner;
+   }
+
+   setClicked() {
+       this.clicked = true;
+       }
+   }
+
+    function onClickMethode(e) {
+         const clickedCell = e.target;
+             if (clickedCell.nodeName === 'TD' && clickedCell.textContent !== '') {
+             if (turn) {
+                     clickedCell.className = 'xDisplay';
+                     clickedCell.innerHTML = '<svg><use xlink:href="#cross"/></svg>';
+             } else {
+                     clickedCell.className = 'oDisplay';
+                     clickedCell.innerHTML = '<svg><use xlink:href="#circle"/></svg>';
+             }
+                  const cellPosition = clickedCell.id.split(',');
+                  cells[cellPosition[0]][cellPosition[1]] = turn ? 'x' : 'o';
+                  turn = !turn;
+                  turnDisplay.innerHTML = turn ? 'X ist drann!' : 'O ist drann!';
+                  testIfWon();
+              }
+    }
+
+   function resetGame() {
+            cells[0] = ['', '', ''];
+            cells[1] = ['', '', ''];
+            cells[2] = ['', '', ''];
+            const allCells = document.querySelectorAll('td');
+            allCells.forEach(cell => {
+                   cell.className = '';
+                   cell.innerHTML = '';
+            });
+                   turn = true;
+                   turnDisplay.innerHTML = 'X ist drann!';
+                            }
+
+   function testIfWon() {
+           let hasWon = false;
+                if (cells[0][0] === 'x' && cells[0][1] === 'x' && cells[0][2] === 'x') { //rows x
+                alert('x won');
+                hasWon = true;
+                } else if (cells[1][0] === 'x' && cells[1][1] === 'x' && cells[1][2] === 'x') {
+                alert('x won');
+                hasWon = true;
+                } else if (cells[2][0] === 'x' && cells[2][1] === 'x' && cells[2][2] === 'x') {
+                alert('x won');
+                hasWon = true;
+                } else if (cells[0][0] === 'x' && cells[1][0] === 'x' && cells[2][0] === 'x') { //columns x
+                alert('x won');
+                hasWon = true;
+                } else if (cells[0][1] === 'x' && cells[1][1] === 'x' && cells[2][1] === 'x') {
+                alert('x won');
+                hasWon = true;
+                } else if (cells[0][2] === 'x' && cells[1][2] === 'x' && cells[2][2] === 'x') {
+                alert('x won');
+                hasWon = true;
+                } else if (cells[0][0] === 'x' && cells[1][1] === 'x' && cells[2][2] === 'x') { //diagonal x
+                alert('x won');
+                hasWon = true;
+                } else if (cells[0][2] === 'x' && cells[1][1] === 'x' && cells[2][0] === 'x') {
+                alert('x won');
+                hasWon = true;
+                } else if (cells[0][0] === 'o' && cells[0][1] === 'o' && cells[0][2] === 'o') { //rows o
+                alert('o won');
+                hasWon = true;
+                } else if (cells[1][0] === 'o' && cells[1][1] === 'o' && cells[1][2] === 'o') {
+                alert('o won');
+                hasWon = true;
+                } else if (cells[2][0] === 'o' && cells[2][1] === 'o' && cells[2][2] === 'o') {
+                alert('o won');
+                hasWon = true;
+                } else if (cells[0][0] === 'o' && cells[1][0] === 'o' && cells[2][0] === 'o') { //columns o
+                alert('o won');
+                hasWon = true;
+                } else if (cells[0][1] === 'o' && cells[1][1] === 'o' && cells[2][1] === 'o') {
+                alert('o won');
+                hasWon = true;
+                } else if (cells[0][2] === 'o' && cells[1][2] === 'o' && cells[2][2] === 'o') {
+                alert('o won');
+                hasWon = true;
+                } else if (cells[0][0] === 'o' && cells[1][1] === 'o' && cells[2][2] === 'o') {  //diagonal o
+                alert('o won');
+                hasWon = true;
+                } else if (cells[0][2] === 'o' && cells[1][1] === 'o' && cells[2][0] === 'o') {
+                alert('o won');
+                hasWon = true;
+                }
+           if(hasWon){
+               resetGame();
+           }
+     }
+                        </xmp>
+                        <a href=../u9/game.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe4">
+
+            <article>
+                <div class ="title">
+                    <h2>Kurze Demonstration von translate, rotate und scale </h2>
+                </div>
+                <div class="introduce-text">
+                    <p>Diese Transformationen sind wichtig, um SVG-Elemente zu positionieren und zu manipulieren.</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3>Translate:</h3>
+                        <p>translate(x, y) verschiebt das Element um x Einheiten in horizontaler Richtung und um y
+                            Einheiten in vertikaler Richtung.</p>
+                    </div>
+                    <div class="faq-body">
+                        <p>Beispiel:
+                            <xmp>
+<rect x="10" y="10" width="50" height="50" transform="translate(30, 20)" />
+                            </xmp>
+                            verschiebt ein Rechteck um 30 Einheiten nach rechts und 20 Einheiten nach unten.
+                        </p>
+                    </div>
+                    <hr class="hr-line">
+
+                    <div class="faq-page">
+                        <h3>Rotate:</h3>
+                        <p>rotate(angle, cx, cy) dreht das Element um den angegebenen Winkel angle (in Grad) um den Drehpunkt (cx, cy).
+                            Wenn der Drehpunkt nicht angegeben ist, wird das Element um seinen Ursprung gedreht.</p>
+                    </div>
+                    <div class="faq-body">
+                        <p>Beispiel:
+                            <xmp>
+<rect x="10" y="10" width="50" height="50" transform="rotate(45, 35, 35)" />
+                            </xmp>
+                            dreht ein Rechteck um 45 Grad um den Punkt (35, 35).
+                        </p>
+                    </div>
+                    <hr class="hr-line">
+
+                    <div class="faq-page">
+                        <h3>Scale:</h3>
+                        <p>scale(sx, sy) skaliert das Element um die Faktoren sx und sy in horizontaler bzw. vertikaler Richtung.
+                            Wenn sy nicht angegeben ist, wird der gleiche Skalierungsfaktor für beide Richtungen verwendet.</p>
+                    </div>
+                    <div class="faq-body">
+                        <p>Beispiel:
+                            <xmp>
+ <rect x="10" y="10" width="50" height="50" transform="scale(2, 3)" />
+                            </xmp>
+                            skaliert ein Rechteck um den Faktor 2 in horizontaler und um den Faktor 3 in vertikaler Richtung.
+                        </p>
+                    </div>
+                    <hr class="hr-line">
+
+                    <div class="faq-page">
+                        <h3>Hier ist ein SVG-Beispiel, das alle drei Transformationen demonstriert: </h3>
+
+                    </div>
+                    <div class="faq-body">
+                        <p>Beispiel:</p>
+                            <xmp>
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+<!-- Original Rectangle -->
+<rect x="10" y="10" width="50" height="50" fill="blue" />
+
+<!-- Translated Rectangle -->
+<rect x="10" y="10" width="50" height="50" fill="green" transform="translate(60, 0)" />
+
+<!-- Rotated Rectangle -->
+<rect x="10" y="10" width="50" height="50" fill="red" transform="rotate(45, 35, 35)" />
+</svg>
+                            </xmp>
+                        <p>skaliert ein Rechteck um den Faktor 2 in horizontaler und um den Faktor 3 in vertikaler Richtung.</p>
+                    </div>
+                    <a href=../u9/Beispiel.html>
+                        <button>Ergebnis sehen!</button>
+                    </a>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+    </div>
+</main>
+<!-- javascript -->
+<script src="../u1/L1script.js"></script>
+
+
+</body>
+</html>

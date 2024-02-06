@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 8: Asynchrones JavaScript</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <!-- extra fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <!-- styles -->
+    <link rel="stylesheet" href="../u1/L1styles.css" />
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="left-side">
+            <!-- Die Link needs fixing -->
+            <a href="../index.html" class="fas fa-laptop-house" style="font-size:2rem;color:#2196F3"></a>
+        </div>
+        <div class="middle">
+            <h1>KW 42</h1>
+        </div>
+    </div>
+</header>
+<main>
+    <nav>
+        <ul>
+            <li><label for="aufgabe1">Aufgabe 1</label></li>
+            <li><label for="aufgabe2">Aufgabe 2</label></li>
+            <li><label for="aufgabe3">Aufgabe 3</label></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe1">
+            <article>
+                <div class ="title">
+                    <h2>8.1 Promises</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3>Erstellen Sie auf Ihrem lokalen Server (localhost) zwei Text-Dateien A.txt und B.txt mit ungefähr gleich vielen Zeilen.
+                            Laden Sie mit der fetch-API parallel beide Text-Dateien vom Server. Geben Sie auf einer Webseite den Inhalt beider Dateien
+                            zeilenweise aus, wobei der Anfang der Zeile aus A.txt und das Ende aus B.txt stammen soll. Die beiden Dateien sollen also
+                            zeilenweise konkateniert werden.
+                        </h3>
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenated Files</title>
+</head>
+<body>
+
+<div id="output"></div>
+
+<script>
+    // Funktion zum Laden einer Datei über die Fetch-API
+    function ladeDatei(url) {
+        return fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Fehler beim Laden der Datei: ${response.status} ${response.statusText}`);
+                }
+                return response.text();
+            });
+    }
+
+    // URLs zu den Textdateien auf Ihrem Server
+    const urlA = 'http://localhost:63342/WebEngineering23/u8/A.txt';
+    const urlB = 'http://localhost:63342/WebEngineering23/u8/B.txt';
+
+    // Parallel beide Dateien laden und konkatenieren
+    Promise.all([ladeDatei(urlA), ladeDatei(urlB)])
+        .then(([inhaltA, inhaltB]) => {
+            const zeilenA = inhaltA.split('\n');
+            const zeilenB = inhaltB.split('\n');
+            const maxZeilen = Math.max(zeilenA.length, zeilenB.length);
+
+            for (let i = 0; i < maxZeilen; i++) {
+                const textA = zeilenA[i] || '';
+                const textB = zeilenB[i] || '';
+                const kombiniert = `${textA} - ${textB}`;
+                document.getElementById('output').innerHTML += `<p>${kombiniert}</p>`;
+            }
+        })
+        .catch(error => {
+            console.error('Fehler beim Laden der Dateien:', error);
+        });
+</script>
+
+</body>
+</html>
+
+                        </xmp>
+                        <a href=../u8/Promises.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe2">
+            <article>
+                <div class ="title">
+                    <h2>8.2 async/await</h2>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Lösen Sie die letzte Aufgabe mit async/await statt Promise.
+                        </h3>
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async/await</title>
+</head>
+<body>
+
+<div id="output"></div>
+
+<script>
+    // Funktion zum Laden einer Datei über die Fetch-API mit async/await
+    async function ladeDatei(url) {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`Fehler beim Laden der Datei: ${response.status} ${response.statusText}`);
+        }
+
+        return await response.text();
+    }
+
+    // URLs zu den Textdateien auf Ihrem Server
+    const urlA = 'http://localhost:63342/WebEngineering23/u8/A.txt';
+    const urlB = 'http://localhost:63342/WebEngineering23/u8/B.txt';
+
+    // Funktion zum Kombinieren der Zeilen
+    function kombiniereZeilen(zeilenA, zeilenB) {
+        const maxZeilen = Math.max(zeilenA.length, zeilenB.length);
+        let kombinierteAusgabe = '';
+
+        for (let i = 0; i < maxZeilen; i++) {
+            const textA = zeilenA[i] || '';
+            const textB = zeilenB[i] || '';
+            const kombiniert = `${textA} - ${textB}`;
+            kombinierteAusgabe += `<p>${kombiniert}</p>`;
+        }
+
+        return kombinierteAusgabe;
+    }
+
+    // Hauptfunktion mit async/await
+    async function main() {
+        try {
+            const inhaltA = await ladeDatei(urlA);
+            const inhaltB = await ladeDatei(urlB);
+
+            const zeilenA = inhaltA.split('\n');
+            const zeilenB = inhaltB.split('\n');
+
+            const kombinierteAusgabe = kombiniereZeilen(zeilenA, zeilenB);
+
+            document.getElementById('output').innerHTML = kombinierteAusgabe;
+        } catch (error) {
+            console.error('Fehler beim Laden der Dateien:', error);
+        }
+    }
+
+    // Aufruf der Hauptfunktion
+    main();
+</script>
+
+</body>
+</html>
+                        </xmp>
+                        <a href=../u8/async_await.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe3">
+
+            <article>
+                <div class ="title">
+                    <h2>8.3 WWW-Navigator</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Schreiben Sie einen Navigator für die Fachbegriffe des WWW zu den Oberthemen HTML, CSS und JavaScript.
+                            Im Hauptmenü sollen diese 3 Oberthemen zur Auswahl stehen. Im Untermenü soll eine zugehörige Liste von
+                            Fachbegriffen zum jeweiligen ausgewählten Oberthema stehen. In der Mitte soll eine Dokumentation zum ausgewählten
+                            Fachbegriff erscheinen.</h3>
+                        <img src="../images/www-navigator.png" alt="html_wireframe" width="500" height="auto">
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <meta charset="UTF-8">
+       <title>WWW Navi</title>
+       <style>
+           *{margin: 0; padding: 0; border: 0;box-sizing: border-box;}
+           /* Header*/
+           .container{
+               background-color: #c24f4f;
+               margin-top: 0;
+               border-radius : 25px 25px 0px 0px ;
+           }
+           h1{
+               text-align: center;
+               color: white;
+           }
+           .navbar ul{
+               list-style-type: none;
+               padding: 0px;
+               margin: 0px;
+               overflow: hidden;
+           }
+           .navbar a{
+               color: black;
+               text-decoration: none;
+               margin: 10px;
+               padding: 10px 20px;
+               text-align: center;
+               display: block;
+               border-radius: 10px;
+               border-style: outset;
+               border-color: white;
+               border-width: 2px;
+               background-color: #6a70a0;
+           }
+           .navbar a:hover{
+               background-color: white ;
+           }
+           .navbar li{
+               float: left;
+           }
+           /* Main */
+           main{
+               min-height: 60rem;
+               display: flex; flex-flow: row wrap;
+           }
+           aside{
+               background-color: #c28283;
+           }
+           aside:nth-child(1){
+               flex: 0 0 200px;
+               background-color: #c28283;
+           }
+           article{
+               flex: 1 0 auto;background-color: #95d2f3;
+           }
+           aside:nth-child(4){
+               flex: 0 0 250px;
+           }
+           /* Footer */
+           footer{
+               background-color: black; min-height: 50px;
+           }
+           .footerNav ul{
+               display: flex;
+               justify-content: center;
+           }
+           .footerNav ul li a{
+               margin: 20px;
+               font-size: 2em ;
+               opacity: 0.7;
+               transition: 0.5s;
+               color: white;
+           }
+           .footerNav ul li a:hover{
+               opacity: 1;
+           }
+
+       </style>
+   </head>
+   <body>
+   <div class="container">
+       <h1>WWW-Navigator</h1>
+       <nav class="navbar">
+           <ul id="navbar">
+           </ul>
+       </nav>
+
+   </div>
+
+   <main>
+       <aside class = "left-side"></aside>
+       <ul id="sidebar">
+       </ul>
+       <article>
+           <div id="content" ></div>
+       </article>
+       <aside class = "right-side"></aside>
+       <div id="additional"></div>
+   </main>
+   <footer>
+       <div class="footerNav">
+           <ul>
+               <h1>Footer:</h1>
+               <li><a href="">Sitemap</a> </li>
+               <li><a href="">Home</a> </li>
+               <li><a href="">News</a> </li>
+               <li><a href="">Contact</a> </li>
+               <li><a href="">About</a> </li>
+           </ul>
+       </div>
+   </footer>
+   <script>
+       const navbar = document.getElementById('navbar');
+       let sidebar = document.getElementById('sidebar')
+       const content = document.getElementById('content');
+       const additional = document.getElementById('additional');
+       let websiteStructure;
+
+
+       function createNavbarElements(element) {
+           let listNameElement = document.createElement('li');
+           let aElem = document.createElement('a');
+           aElem.innerText = element;
+           listNameElement.appendChild(aElem);
+           navbar.appendChild(listNameElement);
+       }
+
+       function createSidebarElements(sidebarStructur) {
+           for (const sidebarStructurKey in sidebarStructur) {
+               let sidebarListElement = document.createElement('li');
+               sidebarListElement.innerText = sidebarStructurKey;
+               sidebar.appendChild(sidebarListElement);
+           }
+       }
+       function displayContent(section) {
+           for (const heading in section) {
+               let paragraphElement = document.createElement('p');
+               paragraphElement.innerText = section[heading].content;
+               content.appendChild(paragraphElement);
+
+               let referencesElement = document.createElement('p');
+               referencesElement.innerText = section[heading].references;
+               additional.appendChild(referencesElement);
+           }
+       }
+
+       document.addEventListener("DOMContentLoaded", event => {
+           fetch('./data.json')
+               .then(res =>res.json()) // Javascript normal Array
+               .then(data => {
+                   for (const element in data) {
+                       createNavbarElements(element);
+                       createSidebarElements(data[element]);
+                       displayContent(data[element]);
+                   }
+               });
+       });
+
+   </script>
+   </body>
+</html>
+                        </xmp>
+                        <a href=../u8/www_navigator.html>
+                            <button>Ergebnis sehen!</button>
+                        </a>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+    </div>
+</main>
+<!-- javascript -->
+<script src="../u1/L1script.js"></script>
+
+
+</body>
+</html>

@@ -398,5 +398,11 @@ button:hover {
      border-radius: 4px;
      font-family: monospace;
  }
+/*Ubung 7*/
+article .introduce-text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
 

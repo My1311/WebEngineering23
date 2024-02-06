@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9661d6ce-54a3-4217-855f-5f007e4167e2" name="Changes" comment="navigation bar reponsiv machen und Html Seite fur Ubung4,5,6,7">
+      <change afterPath="$PROJECT_DIR$/u8/Lektion8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u9/Beispiel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u9/Lektion9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u9/game.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u9/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u1/L1styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/u1/L1styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u7/Lektion7.html" beforeDir="false" afterPath="$PROJECT_DIR$/u7/Lektion7.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2c3bb13d-a1f9-410f-8511-0c343490c960" />
+        <option name="url" value="https://github.com/My1311/WebEngineering23.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2WXcjruDmGC9PTQ6Jlm1G6nhsGl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Node.js.Textanalyse.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Textanalyse2.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/My/WebstormProjects/WebEngineering23&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\My\WebstormProjects\WebEngineering23\u8" />
+      <recent name="C:\Users\My\WebstormProjects\WebEngineering23\u5" />
+      <recent name="C:\Users\My\WebstormProjects\WebEngineering23\u4" />
+      <recent name="C:\Users\My\WebstormProjects\WebEngineering23\u1" />
+      <recent name="C:\Users\My\WebstormProjects\WebEngineering23" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\My\WebstormProjects\WebEngineering23\markdaten" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.Textanalyse2.js">
+    <configuration name="www_navigator.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/WebEngineering23/u8/www_navigator.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Promises.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/u8/Promises.js" working-dir="$PROJECT_DIR$/u8">
+      <method v="2" />
+    </configuration>
+    <configuration name="Textanalyse2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/u7/Textanalyse2.js" working-dir="$PROJECT_DIR$/u7">
+      <method v="2" />
+    </configuration>
+    <configuration name="Textanalyse.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/u7/Textanalyse.js" working-dir="$PROJECT_DIR$/u7">
+      <method v="2" />
+    </configuration>
+    <configuration name="navi.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/u8/navi.js" working-dir="$PROJECT_DIR$/u8">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Textanalyse2.js" />
+        <item itemvalue="Node.js.Textanalyse.js" />
+        <item itemvalue="Node.js.navi.js" />
+        <item itemvalue="JavaScript Debug.www_navigator.html" />
+        <item itemvalue="Node.js.Promises.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9661d6ce-54a3-4217-855f-5f007e4167e2" name="Changes" comment="" />
+      <created>1696882504056</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696882504056</updated>
+      <workItem from="1696882507042" duration="8983000" />
+      <workItem from="1696892828504" duration="602000" />
+      <workItem from="1697326807844" duration="760000" />
+      <workItem from="1697445753504" duration="1200000" />
+      <workItem from="1697452812178" duration="5323000" />
+      <workItem from="1697618162383" duration="2087000" />
+      <workItem from="1697632027328" duration="12217000" />
+      <workItem from="1698218706809" duration="2841000" />
+      <workItem from="1698241243694" duration="1267000" />
+      <workItem from="1699024526779" duration="2276000" />
+      <workItem from="1699134968006" duration="5711000" />
+      <workItem from="1699182356810" duration="8763000" />
+      <workItem from="1699396914711" duration="3455000" />
+      <workItem from="1699431220627" duration="6462000" />
+      <workItem from="1699611215641" duration="3658000" />
+      <workItem from="1699650755069" duration="15371000" />
+      <workItem from="1699797468477" duration="4266000" />
+      <workItem from="1699962262054" duration="2967000" />
+      <workItem from="1700057446651" duration="3798000" />
+      <workItem from="1700479162787" duration="1007000" />
+      <workItem from="1700640871141" duration="7037000" />
+      <workItem from="1701005539403" duration="10521000" />
+      <workItem from="1701037721034" duration="595000" />
+      <workItem from="1701295271320" duration="1483000" />
+      <workItem from="1701441960628" duration="596000" />
+      <workItem from="1701529492284" duration="6471000" />
+      <workItem from="1701601668795" duration="13657000" />
+      <workItem from="1701877847027" duration="11351000" />
+      <workItem from="1702006750111" duration="7990000" />
+      <workItem from="1702041153861" duration="8197000" />
+      <workItem from="1702365059909" duration="2927000" />
+      <workItem from="1702898145436" duration="4803000" />
+      <workItem from="1703461355930" duration="204000" />
+      <workItem from="1703550326154" duration="887000" />
+      <workItem from="1703852567462" duration="19804000" />
+      <workItem from="1703957040414" duration="13348000" />
+      <workItem from="1704143555125" duration="2961000" />
+      <workItem from="1704368273951" duration="928000" />
+      <workItem from="1704473101982" duration="10312000" />
+      <workItem from="1704865839814" duration="9935000" />
+      <workItem from="1705569463953" duration="3170000" />
+      <workItem from="1706536559497" duration="2729000" />
+      <workItem from="1707142832802" duration="3358000" />
+      <workItem from="1707216918118" duration="11309000" />
+      <workItem from="1707251974835" duration="5088000" />
+    </task>
+    <task id="LOCAL-00001" summary="den ersten Schritt machen">
+      <created>1696882819949</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696882819949</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Homepage erstellen (Header, Naviagtion Bar, body)">
+      <created>1697326902441</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697326902441</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Übung 1 machen und in Hompage zeigen">
+      <created>1697462276888</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697462276888</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Übung 1.7 machen">
+      <created>1697498993798</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697498993798</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Aufgaben von Übung 2 erledigen">
+      <created>1697661174302</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697661174307</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Aufgaben von Übung 3.1 erledigen">
+      <created>1699134675199</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699134675200</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Aufgaben von Übung 3.1 erledigen">
+      <created>1699134715764</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699134715764</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Aufgaben von Übung 3.2 erledigen">
+      <created>1699139734281</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699139734281</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Aufgaben von Übung 3.3 erledigen">
+      <created>1699194922580</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699194922580</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Aufgaben von Übung 3.3 korrigieren">
+      <created>1699402665096</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1699402665096</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Losungen von Ubung 1 auf Website zeigen">
+      <created>1699617314600</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1699617314600</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Uebung 4 Javascript machen">
+      <created>1699802048786</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1699802048786</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Die Aufaben mit css und Javascript dekorieren">
+      <created>1700061281428</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1700061281428</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Die Aufaben 5.1 machen">
+      <created>1700485487089</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700485487089</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Die Aufaben 5.2 machen">
+      <created>1701025981682</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701025981682</updated>
+    </task>
+    <task id="LOCAL-00016" summary="quickly fix">
+      <created>1701026103634</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701026103634</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ubung 6.1,6.2,6.3 machen">
+      <created>1701565475178</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1701565475178</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Ubung 6.4, 6.5 machen">
+      <created>1701607342479</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701607342479</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Ubung 7 machen">
+      <created>1701878542375</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701878542375</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Ubung 8 machen">
+      <created>1702462047234</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1702462047234</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Ubung 9 machen">
+      <created>1703461397349</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1703461397349</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Ubung 9.3 machen und neue Homepage mit 2 Navigator Bars erstellen">
+      <created>1703896036466</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1703896036466</updated>
+    </task>
+    <task id="LOCAL-00023" summary="neue Homepage mit 2 Navigator Bars erstellen&#10;2 hmtl Seite fur u1 und u2 machen&#10;Pfade funktioniert">
+      <created>1704368604316</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1704368604316</updated>
+    </task>
+    <task id="LOCAL-00024" summary="u11 machen">
+      <option name="closed" value="true" />
+      <created>1704539746663</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1704539746663</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Lektion3.html erstellen">
+      <option name="closed" value="true" />
+      <created>1705570966426</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1705570966426</updated>
+    </task>
+    <task id="LOCAL-00026" summary="update U7 A2: Textanalyse mit filter-map-reduce">
+      <option name="closed" value="true" />
+      <created>1706540026477</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1706540026477</updated>
+    </task>
+    <task id="LOCAL-00027" summary="update U2 A4">
+      <option name="closed" value="true" />
+      <created>1707178716408</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1707178716408</updated>
+    </task>
+    <task id="LOCAL-00028" summary="navigation bar reponsiv machen und Html Seite fur Ubung4,5,6,7">
+      <option name="closed" value="true" />
+      <created>1707251933735</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1707251933735</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Übung 1 machen und in Hompage zeigen" />
+    <MESSAGE value="Übung 1.7 machen" />
+    <MESSAGE value="Aufgaben von Übung 2 erledigen" />
+    <MESSAGE value="Aufgaben von Übung 3.1 erledigen" />
+    <MESSAGE value="Aufgaben von Übung 3.2 erledigen" />
+    <MESSAGE value="Aufgaben von Übung 3.3 erledigen" />
+    <MESSAGE value="Aufgaben von Übung 3.3 korrigieren" />
+    <MESSAGE value="Losungen von Ubung 1 auf Website zeigen" />
+    <MESSAGE value="Uebung 4 Javascript machen" />
+    <MESSAGE value="Die Aufaben mit css und Javascript dekorieren" />
+    <MESSAGE value="Die Aufaben 5.1 machen" />
+    <MESSAGE value="Die Aufaben 5.2 machen" />
+    <MESSAGE value="quickly fix" />
+    <MESSAGE value="Ubung 6.1,6.2,6.3 machen" />
+    <MESSAGE value="Ubung 6.4, 6.5 machen" />
+    <MESSAGE value="Ubung 7 machen" />
+    <MESSAGE value="Ubung 8 machen" />
+    <MESSAGE value="Ubung 9 machen" />
+    <MESSAGE value="Ubung 9.3 machen und neue Homepage mit 2 Navigator Bars erstellen" />
+    <MESSAGE value="neue Homepage mit 2 Navigator Bars erstellen&#10;2 hmtl Seite fur u1 und u2 machen&#10;Pfade funktioniert" />
+    <MESSAGE value="u11 machen" />
+    <MESSAGE value="Lektion3.html erstellen" />
+    <MESSAGE value="update U7 A2: Textanalyse mit filter-map-reduce" />
+    <MESSAGE value="update U2 A4" />
+    <MESSAGE value="navigation bar reponsiv machen und Html Seite fur Ubung4,5,6,7" />
+    <option name="LAST_COMMIT_MESSAGE" value="navigation bar reponsiv machen und Html Seite fur Ubung4,5,6,7" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/u6/DeepCopy.js</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/u6/DeepCopy.js</url>
+          <line>31</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
