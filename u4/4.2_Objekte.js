@@ -1,4 +1,4 @@
-function Person(name, besesenesAuto) {
+/*function Person(name, besesenesAuto) {
     this.name = name;
     this.besesenesAuto = [];
 }
@@ -7,8 +7,8 @@ function Auto(kennzeichen, marke){
     this.kennzeichen = kennzeichen;
     this.marke = marke;
     this.besitzer = null;
-
-}
+}*/
+import {Person, Auto} from '../u4/individuell_objekten.js';
 //  Funktion, um zu überprüfen, ob ein Auto von mehr als einer Person besessen wird
 function conflict(auto){
     const besitzer = auto.besitzer;

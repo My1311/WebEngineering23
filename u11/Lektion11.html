@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 11: NodeJS</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <!-- extra fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <!-- styles -->
+    <link rel="stylesheet" href="../u1/L1styles.css" />
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="left-side">
+            <!-- Die Link needs fixing -->
+            <a href="../index.html" class="fas fa-laptop-house" style="font-size:2rem;color:#2196F3"></a>
+        </div>
+        <div class="middle">
+            <h1>KW 42</h1>
+        </div>
+    </div>
+</header>
+<main>
+    <nav>
+        <ul>
+            <li><label for="aufgabe1">Aufgabe 1</label></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe1">
+            <article>
+                <div class ="title">
+                    <h2>11.1 Lokaler Webserver mit NodeJS</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3>Erstellen Sie einen lokalen Webserver mit NodeJS. Reichen Sie als Lösung den JS-Code Ihrer server.js ein. <br>
+                            Der Webserver soll über eine Schnittstelle verfügen, an die ein Client einen Namen senden kann und als Ergebnis
+                            dann mit einem Gruß antwortet.</h3>
+                    </div>
+                    <div class="faq-body">
+                        <xmp>
+const http = require('http')
+const fs = require('fs')
+const port = 3000
+
+const server = http.createServer(function (req, res){
+res.writeHead(200, {'Content-Type': 'text/html'})
+// einfach die Html Seite, die alle Anforderungen der Aufgabe machen und hier lesen
+fs.readFile('../u11/index.html', function (error, data) {
+    if(error) {
+res.writeHead(404)
+res.write('Error: File not found')
+    } else{
+       res.write(data)
+}
+     res.end()
+})
+})
+     server.listen(port,function (error) {
+     if(error){
+console.log("Something went wrong", error)
+     } else{
+console.log('Server is listening on port' + port)
+     }
+})
+
+// html Seite
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Greeting App</h1>
+    <label for="nameInput">Bitte deinen Name geben:</label>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="sendName()">Send Name</button>
+    <p id="greetingResult"></p>
+</div>
+
+<script>
+    function sendName() {
+        const nameInput = document.getElementById('nameInput');
+        const greetingResult = document.getElementById('greetingResult');
+
+        const name = nameInput.value;
+
+        if (name.trim() === '') {
+            alert('Bitte deinen Name noch einmal geben:');
+            return;
+        }
+        const greetingMessage = `Hallo ${name}!`;
+        // Display the greeting message
+        greetingResult.textContent = greetingMessage;
+    }
+</script>
+
+                            </body>
+                            </html>
+                        </xmp>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+    </div>
+</main>
+<!-- javascript -->
+<script src="../u1/L1script.js"></script>
+
+
+</body>
+</html>

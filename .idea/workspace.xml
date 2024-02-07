@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9661d6ce-54a3-4217-855f-5f007e4167e2" name="Changes" comment="navigation bar reponsiv machen und Html Seite fur Ubung4,5,6,7">
-      <change afterPath="$PROJECT_DIR$/u8/Lektion8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u9/Beispiel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u9/Lektion9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u9/game.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/u9/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/u1/L1styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/u1/L1styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/u7/Lektion7.html" beforeDir="false" afterPath="$PROJECT_DIR$/u7/Lektion7.html" afterDir="false" />
+    <list default="true" id="9661d6ce-54a3-4217-855f-5f007e4167e2" name="Changes" comment="Tic tac toe game update und Html Seite fur Ubung 8,9 machen">
+      <change afterPath="$PROJECT_DIR$/u10/Lektion10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u11/Lektion11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u12/Lektion12.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/u4/individuell_objekten.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u2/Lektion2.html" beforeDir="false" afterPath="$PROJECT_DIR$/u2/Lektion2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u4/4.2_Objekte.js" beforeDir="false" afterPath="$PROJECT_DIR$/u4/4.2_Objekte.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u4/Lektion4.html" beforeDir="false" afterPath="$PROJECT_DIR$/u4/Lektion4.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +27,8 @@
       <list>
         <option value="package.json" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -58,6 +62,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Node.js.4.2_Objekte.js.executor&quot;: &quot;Run&quot;,
     &quot;Node.js.Textanalyse.js.executor&quot;: &quot;Run&quot;,
     &quot;Node.js.Textanalyse2.js.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -87,11 +92,11 @@
       <recent name="C:\Users\My\WebstormProjects\WebEngineering23\markdaten" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Textanalyse2.js">
+  <component name="RunManager" selected="Node.js.4.2_Objekte.js">
     <configuration name="www_navigator.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/WebEngineering23/u8/www_navigator.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="Promises.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/u8/Promises.js" working-dir="$PROJECT_DIR$/u8">
+    <configuration name="4.2_Objekte.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/u4/4.2_Objekte.js" working-dir="$PROJECT_DIR$/u4">
       <method v="2" />
     </configuration>
     <configuration name="Textanalyse2.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/u7/Textanalyse2.js" working-dir="$PROJECT_DIR$/u7">
@@ -105,11 +110,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.4.2_Objekte.js" />
         <item itemvalue="Node.js.Textanalyse2.js" />
         <item itemvalue="Node.js.Textanalyse.js" />
         <item itemvalue="Node.js.navi.js" />
         <item itemvalue="JavaScript Debug.www_navigator.html" />
-        <item itemvalue="Node.js.Promises.js" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +170,8 @@
       <workItem from="1706536559497" duration="2729000" />
       <workItem from="1707142832802" duration="3358000" />
       <workItem from="1707216918118" duration="11309000" />
-      <workItem from="1707251974835" duration="5088000" />
+      <workItem from="1707251974835" duration="5831000" />
+      <workItem from="1707308932177" duration="10400000" />
     </task>
     <task id="LOCAL-00001" summary="den ersten Schritt machen">
       <created>1696882819949</created>
@@ -368,7 +374,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707251933735</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Tic tac toe game update und Html Seite fur Ubung 8,9 machen">
+      <option name="closed" value="true" />
+      <created>1707259134314</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1707259134314</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +412,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Übung 1 machen und in Hompage zeigen" />
     <MESSAGE value="Übung 1.7 machen" />
     <MESSAGE value="Aufgaben von Übung 2 erledigen" />
     <MESSAGE value="Aufgaben von Übung 3.1 erledigen" />
@@ -423,22 +436,7 @@
     <MESSAGE value="update U7 A2: Textanalyse mit filter-map-reduce" />
     <MESSAGE value="update U2 A4" />
     <MESSAGE value="navigation bar reponsiv machen und Html Seite fur Ubung4,5,6,7" />
-    <option name="LAST_COMMIT_MESSAGE" value="navigation bar reponsiv machen und Html Seite fur Ubung4,5,6,7" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/u6/DeepCopy.js</url>
-          <line>30</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/u6/DeepCopy.js</url>
-          <line>31</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Tic tac toe game update und Html Seite fur Ubung 8,9 machen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tic tac toe game update und Html Seite fur Ubung 8,9 machen" />
   </component>
 </project>

@@ -56,65 +56,74 @@
                 <hr class="hr-line">
                 <div class="faq-container">
                     <!-- faq question -->
-                    <h1 class="faq-page">1. Was ist HTML?</h1>
+                    <h1 class="faq-page">Eine Funktion identity_function(), die ein Argument als Parameter entgegennimmt
+                        und eine Funktion zurückgibt, die dieses Argument zurückgibt.</h1>
                     <!-- faq answer -->
                     <div class="faq-body">
-                        <p>HTML (Hypertext Markup Language) ist der Code, welcher benötigt wird, um den Webinhalt zu strukturieren und ihm eine Bedeutung und einen Zweck zu geben.</p>
+                        <xmp>
+function identity_function(wert){
+    return identity(wert);
+}
+                        </xmp>
                     </div>
                 </div>
                 <hr class="hr-line">
 
                 <div class="faq-container">
                     <!-- faq question -->
-                    <h1 class="faq-page">1. Was ist HTML?</h1>
+                    <h1 class="faq-page">Zwei binäre Funktionen add und mul, die Summe und Produkt berechnen.</h1>
                     <!-- faq answer -->
                     <div class="faq-body">
-                        <p>HTML (Hypertext Markup Language) ist der Code, welcher benötigt wird, um den Webinhalt zu strukturieren und ihm eine Bedeutung und einen Zweck zu geben.</p>
+                        <xmp>
+function add(number1, number2){
+   return number1 + number2;
+}
+function mul(number1, number2){
+   return number1 * number2;
+}
+                        </xmp>
                     </div>
                 </div>
                 <hr class="hr-line">
 
                 <div class="faq-container">
                     <!-- faq question -->
-                    <h1 class="faq-page">1. Was ist HTML?</h1>
+                    <h1 class="faq-page">Eine Addierer-Funktion addf(), so dass addf(x)(y) genau x + y zurückgibt. <br>
+                        (Es haben also zwei Funktionsaufrufe zu erfolgen. addf(x) liefert eine Funktion, die auf y angewandt wird.)</h1>
                     <!-- faq answer -->
                     <div class="faq-body">
-                        <p>HTML (Hypertext Markup Language) ist der Code, welcher benötigt wird, um den Webinhalt zu strukturieren und ihm eine Bedeutung und einen Zweck zu geben.</p>
+                        <xmp>
+function addf(num1) {
+     return function (num2) { // anonymous function
+         return num1 + num2;
+     }
+}
+console.log(addf(2)(3));
+                        </xmp>
                     </div>
                 </div>
                 <hr class="hr-line">
 
                 <div class="faq-container">
                     <!-- faq question -->
-                    <h1 class="faq-page">1. Was ist HTML?</h1>
+                    <h1 class="faq-page">Eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) eine Funktion addf berechnet,
+                        die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern.</h1>
                     <!-- faq answer -->
                     <div class="faq-body">
-                        <p>HTML (Hypertext Markup Language) ist der Code, welcher benötigt wird, um den Webinhalt zu strukturieren und ihm eine Bedeutung und einen Zweck zu geben.</p>
+                    <xmp>
+function applyf(methode){
+   return function (a){
+     return function (b){
+        return methode(a, b);
+     };
+   };
+}
+console.log(applyf(add)(5)(6));
+                    </xmp>
                     </div>
                 </div>
                 <hr class="hr-line">
 
-                <div class="faq-container">
-                    <!-- faq question -->
-                    <h1 class="faq-page">1. Was ist HTML?</h1>
-                    <!-- faq answer -->
-                    <div class="faq-body">
-                        <p>HTML (Hypertext Markup Language) ist der Code, welcher benötigt wird, um den Webinhalt zu strukturieren und ihm eine Bedeutung und einen Zweck zu geben.</p>
-                    </div>
-                </div>
-                <hr class="hr-line">
-
-
-
-                <div class="faq-container">
-                    <!-- faq question -->
-                    <h1 class="faq-page">1. Was ist HTML?</h1>
-                    <!-- faq answer -->
-                    <div class="faq-body">
-                        <p>HTML (Hypertext Markup Language) ist der Code, welcher benötigt wird, um den Webinhalt zu strukturieren und ihm eine Bedeutung und einen Zweck zu geben.</p>
-                    </div>
-                </div>
-                <hr class="hr-line">
 
 
             </article>
@@ -124,71 +133,71 @@
             <input type ="radio" name="article" id="aufgabe2">
             <article>
                 <div class ="title">
-                    <h2>2.2 CSS-Selektoren und CSS-Farben</h2>
+                    <h2>4.2 Objekte</h2>
                 </div>
 
                 <div class="faq-container">
                     <div class="faq-page">
-                        <h3> Berechnen Sie die Spezifität folgender CSS-Selektoren:</h3>
-                        <p>1. div div div:focus .inner</p>
-                        <p>2. h1 + div.main</p>
-                        <p>3. div a:link[href*='h-brs']</p>
-                        <p>4. nav > a:hover::before </p>
-                        <p>5. ul#primary-nav li.active</p>
+                        <h3> Schreiben Sie die Prototypen Person und Auto in JavaScript, sodass jede Person weiß, welche Autos sie besitzt. <br>
+                            Schreiben Sie eine Funktion conflict(), die feststellt, ob ein Auto von mehr als einer Person besessen wird.</h3>
+
                     </div>
                     <div class="faq-body">
-                        <fieldset>
-                            <p>1.   023 <br>
-                                o   0 = keinen ID-Selektor<br>
-                                o   2 = 1 Klasse + 1 Pseudo-Klasse <br>
-                                o   3 = 3 Typselektoren, nämlich dreimal div</p>
-                        </fieldset>
-                        <fieldset>
-                            <p>2.   012 <br>
-                                o   0 = keinen ID-Selektor<br>
-                                o   2 = 1 Klasse <br>
-                                o   2 = 2 Elementen</p>
-                        </fieldset>
-                        <fieldset>
-                            <p>3.   022 <br>
-                                o   0 = keinen ID-Selektor<br>
-                                o   2 = 2 Klasse <br>
-                                o   2 = 2 Elementen (div und a)</p>
-                        </fieldset>
-                        <fieldset>
-                            <p>4.   013 <br>
-                                o   0 = keinen ID-Selektor<br>
-                                o   2 = 1 Klasse (:hover)<br>
-                                o   3 = 3 Elementen( nav, a, ::bevor)</p>
-                        </fieldset>
-                        <fieldset>
-                            <p>5.   112 <br>
-                                o   1 = ID-Selektor(#primary-nav)<br>
-                                o   2 = 1 Klasse <br>
-                                o   2 = 2 Elementen(ul, li)</p>
-                        </fieldset>
+                        <p> Meine Lösung mit Module </p>
+                        <p> In individuell_objekten Datei:</p>
+                        <xmp>
+function Person(name, besesenesAuto) {
+     this.name = name;
+     this.besesenesAuto = [];
+}
+
+function Auto(kennzeichen, marke){
+      this.kennzeichen = kennzeichen;
+      this.marke = marke;
+      this.besitzer = null;
+}
+export { Person, Auto}; // export the 2 classes
+                        </xmp>
+                        <p> In 4.2_Objekte.js Datei:</p>
+                        <xmp>
+import {Person, Auto} from '../u4/individuell_objekten.js';
+//  Funktion, um zu überprüfen, ob ein Auto von mehr als einer Person besessen wird
+function conflict(auto){
+   const besitzer = auto.besitzer;
+   return besitzer && besitzer.length > 1;
+}
+// Beispiel: Erstellen von Personen
+   const person1 = new Person("Tom");
+   const person2 = new Person("My");
+
+// Beispiel: Erstellen von Autos
+   const car1 = new Auto("1", "Ford");
+   const car2 = new Auto("2", "BMW");
+
+// Personen besitzen Autos
+    person1.besesenesAuto.push(car1);
+    car1.besitzer =[person1];
+
+    person2.besesenesAuto.push(car2);
+    car2.besitzer=[person2];
+
+// Überprüfen auf Konflikte
+    console.log("Konflikt für Auto 1:", conflict(car1)); // false, da nur eine Person Auto 1 besitzt
+    console.log("Konflikt für Auto 2:", conflict(car2)); // false, da nur eine Person Auto 2 besitzt
+
+// Teilen eines Autos zwischen zwei Personen
+    person2.besesenesAuto.push(car1);
+    car1.besitzer.push(person2);
+
+// Überprüfen auf Konflikte nach dem Teilen
+    console.log("Konflikt für Auto 1 nach dem Teilen:", conflict(car1)); // true, da Auto 1 von zwei Personen besessen wird
+                        </xmp>
                     </div>
+                    <p> In package.json Datei muss "type": "module" hinzugefügt werden.</p>
                     <hr class="hr-line">
                 </div>
 
-                <div class="faq-container">
-                    <div class="faq-page">
-                        <h3> Rechnen Sie folgende RGB-Werte mit den DevTools des Webbrowsers in HSL-Werte um:</h3>
-                        <p>1. #ffffff</p>
-                        <p>2. #000</p>
-                        <p>3. #ab0978</p>
-                        <p>4. rgb(127,255,33) </p>
-                        <p>5. rgba(255,127,33,0.8)</p>
-                    </div>
-                    <div class="faq-body">
-                        <p>#ffffff → 0,0,100% = hsl(0,0,100%), also weiß</p>
-                        <p>#000 → hsl(0,0,0), also schwarz</p>
-                        <p>#ab0978 = hsl(319,90,35)</p>
-                        <p>rgb(127,255,33) = hsl(95,100,56) </p>
-                        <p>rgba(255,127,33,0.8) = hsla(25, 100%, 56%, 0.8)</p>
-                    </div>
-                    <hr class="hr-line">
-                </div>
+
             </article>
         </section>
 
@@ -197,156 +206,85 @@
 
             <article>
                 <div class ="title">
-                    <h2>2.3 CSS-Positionierung</h2>
+                    <h2>4.3 Fibonacci</h2>
                 </div>
                 <div class="faq-container">
                     <div class="faq-page">
-                        <h3> Bauen Sie das dynamische Verhalten in den folgenden beiden Videos exakt nach:</h3>
-                        <h3>Arbeiten Sie in beiden Fällen nur mit HTML und CSS, ohne JavaScript.</h3>
-                        <object type="text/html" data="../u2/2.3.1_CSS_Header.html" style="height: 80%; width: auto; "></object>
+                        <h3> Schreiben Sie im Browser die Fibonacci-Funktion in JS und geben Sie die ersten 2000 Fibonacci-Zahlen 0,1,1,2,3,5,8,13,...
+                            auf der Konsole mit console.log() aus.</h3>
+                        <h3>Was ist die größte Fibonacci-Zahl, die sich noch als <mark>Integer/Number</mark> sicher speichern lässt (Number.MAX_SAFE_INTEGER)/(Number.MAX_VALUE)?
+                            Die wievielte Zahl in der Fibonacci-Folge ist das?</h3>
+
                     </div>
                     <div class="faq-body">
                         <xmp>
-                            <!DOCTYPE html>
-                            <html lang="en">
-                            <head>
-                                <meta charset="UTF-8">
-                                <title>CSS Aufgabe Header</title>
-                                <style>
-                                    .subtitle{
-                                        border: 1px solid gray;
-                                        font-size: 150%;
-                                        font-weight: bold;
-                                        background-color: rgba(255, 255, 255, 0.9);
-                                        padding: 1.2rem 1rem;
-                                        margin: 20px;
-                                        position: -webkit-sticky;
-                                        position: sticky;
-                                        top:0;
-                                    }
-                                    p{
-                                        background-color: rgba(211, 211, 211, 0.99);
-                                        margin: 20px;
-                                    }
-                                    /* iframe, resize */
-                                </style>
-                            </head>
-                            <body>
-                            <div class="subtitle">
-                                <h1>Erste Überschrift</h1>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                                sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-                            <p>
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-                                iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
-                                hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
-                                luptatum zzril delenit augue duis dolore te feugait nulla facilisi. </p>
+var i;
+var fib = [0, 1]; // Initialize array!
 
-                            <div class="subtitle"><h1>Zweite Überschrift</h1></div>
+var LAST_SAFE_FIBONACCI = 0;
+var LAST_SAFE_MAXVALUE = 0;
 
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                                sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-                            <p>
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-                                iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
-                                hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
-                                luptatum zzril delenit augue duis dolore te feugait nulla facilisi. </p>
-                            <p> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer
-                                adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-                                suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
-                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-                                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-                                ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam
-                                diam dolore dolores duo eirmod eos erat,
-                                et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+function Fibonacci(){
+    for (i = 2; i <= 2000; i++) {
+    // Next fibonacci number = previous + one before previous
+       fib[i] = fib[i - 2] + fib[i - 1];
+       if (fib[i] < Number.MAX_SAFE_INTEGER) {
+           LAST_SAFE_FIBONACCI = i;
+       }
+       if (fib[i] < Number.MAX_VALUE) {
+           LAST_SAFE_MAXVALUE = i;
+       }
+    }
+    console.log(LAST_SAFE_FIBONACCI + ": " + fib[LAST_SAFE_FIBONACCI]);
+    console.log(LAST_SAFE_MAXVALUE + ": " + fib[LAST_SAFE_MAXVALUE]);
+}
+Fibonacci();
+// Die größte Fibonacci-Zahl, die sich noch als Integer sicher speichern lässt, ist die
+8944394323791464. Das ist die 78te in Fiboncaci.
 
-                            <div class="subtitle"><h1>Dritte Überschrift</h1></div>
-
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
-                                sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-                                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
-                            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-                                iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing
-                                elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in
-                                hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
-                                luptatum zzril delenit augue duis dolore te feugait nulla facilisi. </p>
-                            </body>
-                            </html>
+// Die größte Fibonacci-Zahl, die sich noch als Number sicher speichern lässt, ist die
+1.3069892237633987e+308. Das ist die 1476te in Fiboncaci.
+Danach sind alle großeren Zahlen Infinitiv.
                         </xmp>
-                        <a href=../u2/2.3.1_CSS_Header.html>
-                            <button>Ergebnis sehen!</button>
-                        </a>
+
                     </div>
                     <hr class="hr-line">
                 </div>
 
                 <div class="faq-container">
                     <div class="faq-page">
-                        <h3> 2.Video:</h3>
-                        <object type="text/html" data="../u2/2.3.2_Checkbox_Trick.html" style="height: 80%; width: auto; "></object>
+                        <h3> Wechseln Sie zu BigInt, um alle 2000 Fibonacci-Zahlen korrekt anzuzeigen.</h3>
                     </div>
                     <div class="faq-body">
                         <xmp>
-                            <!DOCTYPE html>
-                            <html lang="en">
-                            <head>
-                                <meta charset="UTF-8">
-                                <title>Checkbox Trick</title>
-                            </head>
-                            <style>
-                                /* Wenn die checkbox ist nicht checked, die div, die direkt nach der checkbox ist hier genannt.*/
-                                /*wir mochten das Element, die Kind von dieser div ist => E>F*/
-                                .checkmark:not(:checked) + div  > .imageHBRS{
-                                    visibility: hidden;
-                                }
-                                #checkboxUbung2{
-                                    height: 20px;
-                                    width: 20px;
-                                }
-                                .ganzeImage{
-                                    border: 2px solid #000000;
-                                    padding: 5px;
-                                    height: auto;
+var i;
+var fib = [0n, 1n]; // Initialize array!
 
-                                }
-                                .imageHBRS{
-                                    max-width: 99%;
-                                    max-height: 99%;
-                                    width: auto;
-                                    height: auto;
-                                    visibility: visible;
-                                }
-                            </style>
-                            <body>
-                            <div class="headline"><h1>Übung 2.2</h1></div>
-                            <div class="hide-and-show photo">
-                                <input class ="checkmark" type="checkbox" id="checkboxUbung2" checked="checked" value="show"> hide and show wie checkbox
-                                <div class="ganzeImage">
-                                    <img class="imageHBRS" src="https://www.h-brs.de/sites/default/files/styles/hresize699x466_32/public/paragraph_single_image/131007_hbrs_sta_088_0.jpg.webp?itok=zt0GsRsh&t=b207" alt="HBRS-image">
-                                </div>
-                            </div>
-
-                            </body>
-                            </html>
+function Fibonacci(){
+    for (i = 2; i <= 2000; i++) {
+    // Next fibonacci number = previous + one before previous
+    // Translated to JavaScript:
+    fib[i] = fib[i - 2] + fib[i - 1];
+    console.log("The value of the " +(i) + " number in Fibonacci string is " +fib[i]);
+}
                         </xmp>
-                        <a href=../u2/2.3.2_Checkbox_Trick.html>
-                            <button>Ergebnis sehen!</button>
-                        </a>
                     </div>
+                    <hr class="hr-line">
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Optional: Was ist die größte Fibonacci-Zahl, die Sie mit BigInt korrekt berechnet haben?
+                            An welcher Stelle in der Fibonacci-Folge steht diese?</h3>
+                    </div>
+                    <div class="faq-body">
+                        <p>The value of the 2000 number in Fibonacci string is 422469633339230487870672560234148278257985284025068109801028013731
+                            430858437013070722412359963914151108844608753890960360764019471164359602927198331259873732625355580260699158591522949
+                            245390499872225679531698287448247299226390183371677806060701161549788671987985831146887087626459736908672288402365442
+                            2295243347964480139515349562972087652656069529806499841977448720155612802665404554171717881930324025204312082516817125</p>
+                    </div>
+                    <a href=../u4/4.3%20_Fibonacci.js>
+                        <button>Ergebnis sehen!</button>
+                    </a>
                     <hr class="hr-line">
                 </div>
             </article>
@@ -356,183 +294,81 @@
             <input type ="radio" name="article" id="aufgabe4">
             <article>
                 <div class ="title">
-                    <h2>2.4 Wireframe mit HTML und CSS</h2>
+                    <h2>4.4 TopSort</h2>
                 </div>
                 <div class="faq-page">
-                    <h3> Gegeben ist folgendes HTML-Wireframe:<br>
-                        Mit welchem HTML- und CSS-Code kann man dieses Wireframe exakt nachbilden?
+                    <h3>Schreiben Sie in JavaScript eine Funktion topsort(), die eine topologische Sortierung berechnet.<br>
+                        Topologische Sortierung ist eine Form von Sortierung. Sie kennen die Funktion Array.prototype.sort()
+                        und wissen, was als Ergebnis erwartet wird, nämlich eine sortiere Liste.
                     </h3>
-                    <img src="../images/survey.jpg" alt="survey" width="500" height="auto">
                 </div>
                 <div class="faq-body">
                     <xmp>
-                        <!DOCTYPE html>
-                        <html lang="en">
-                        <head><meta charset="UTF-8">
-                            <title>Survey Form</title>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-                            <style>
-                                body{
-                                    background-color:#a9d7d1;
-                                    text-align: center;
-                                    font-family: Roboto;
-                                    font-size: 16px;
-                                    color: black;
-                                }
+// Testvariablen
+var relations1 =[["schlafen","studieren"], ["essen","studieren"],["studieren","prüfen"]];
+var elements1 = ["schlafen", "studieren", "essen", "prüfen" ];
 
-                                .container{
-                                    width: 85%;
-                                    height: 6%;
-                                    background-color: snow;
-                                    margin: auto;
-                                    padding: 15px;
-                                    border-radius : 25px 25px 0px 0px ;
-                                }
-                                .getInformationQuestion{
-                                    display: block;
-                                    padding-bottom: 20px;
-                                }
-                                .label-tab{
-                                    display: inline-block;
-                                    width: 44%;
-                                    text-align: right;
-                                    vertical-align: middle;/*design position von
-        *Name in the middle with the input*/
-                                }
-                                .input {
-                                    text-align: left;
-                                    padding: 5px 2px;
-                                    width: 16rem ;
-                                }
-                                .question-tab{
-                                    display: inline-block;
-                                    width: 44%;
-                                    text-align: right;
-                                    vertical-align: top;/* position von question
-        in  top  im Vergleich zu answer (choices)*/
-                                }
+function vorgaenge_bestimmen(relations, elements){
+    var order_number ={};
+    elements.forEach(function (item) {
+    order_number[item] = {name: item, number: 0, nachfolger:[]};
+})
 
-                                .answer{
-                                    display: inline-block;
-                                    text-align: left;
-                                    width: 54%;
-                                }
-                                .answer-choices{
-                                    display: inline-block;
-                                    text-align:left;
-                                    width: 54%;
-                                }
-                                .select-box{
-                                    padding: 5px 0px;
-                                    background-color: #f0f0f0;
-                                    width: 8rem ;
-                                }
-                            </style>
-                        </head>
-                        <body>
-                        <div class="headlineSurvey"><h1>Survey Form</h1></div>
-                        <section>
-                            <div class="container">
-                                <div id="goal">
-                                    <p>Let us know how we can improve freeCodeCamp</p>
-                                </div>
-                                <form id="survey-form">
-                                    <div>
-                                        <div class="getInformationQuestion">
-                                            <div class="label-tab">
-                                                <label>* Name:</label>
-                                            </div>
-                                            <div class="answer">
-                                                <input class="input" type="text" name="Name"
-                                                       placeholder="Enter your name">
-                                            </div>
-                                        </div>
+relations.forEach(function (items){
+     order_number[items[1]].number +=1;
+     if(!order_number[items[0]].nachfolger.includes(items[1])){
+     order_number[items[0]].nachfolger.push(items[1]);
+     }
+})
 
-                                        <div class="getInformationQuestion">
-                                            <div class="label-tab">
-                                                <label>* Email:</label>
-                                            </div>
-                                            <div class="answer">
-                                                <input class="input" type="email" name="Email"
-                                                       placeholder="Enter your Email">
-                                            </div>
-                                        </div>
+return order_number;
+}
 
-                                        <div class="getInformationQuestion">
-                                            <div class="label-tab">
-                                                <label>* Age:</label>
-                                            </div>
-                                            <div class="answer">
-                                                <input class="input" type="number" name="Age" placeholder="Age">
-                                            </div>
-                                        </div>
+function topsort(relations, elements){
+    var order_number = vorgaenge_bestimmen(relations,elements)
+    console.log(order_number);
+    var next = [];
+    var sortierung =[];
 
-                                        <div class="getInformationQuestion">
-                                            <div class="question-tab">
-                                                <label>Which option best describes your current role?</label>
-                                            </div>
-                                            <div class="answer-choices">
-                                                <select class="select-box">
-                                                    <option>Student</option>
-                                                    <option>Pupil</option>
-                                                    <option>Junior</option>
-                                                    <option>Master</option>
-                                                </select>
-                                            </div>
-                                        </div>
+    for(key in order_number){
+       if(order_number[key].number === 0){
+          next.push(key);
+       }
+    }
+        var k = 1; // Zählt die Durchläufe um ggfs. Zyklen zu erkennen
 
-                                        <div class="getInformationQuestion">
-                                            <div class="question-tab">
-                                                <label>How likely is that you would recommend freeCodeCamp to a friend?</label>
-                                            </div>
-                                            <div class="answer">
-                                                <div><input type="radio" name="suggest"><label>Definitely</label></div>
-                                                <div><input type="radio" name="suggest"><label>Maybe</label></div>
-                                                <div><input type="radio" name="suggest"><label>Not sure</label></div>
-                                            </div>
-                                        </div>
-                                        <div class="getInformationQuestion">
-                                            <div class="question-tab">
-                                                <label>What do you like most in FCC:</label>
-                                            </div>
-                                            <div class="answer-choices">
-                                                <select class="select-box">
-                                                    <option>Select an option</option>
-                                                    <option>Web Design</option>
-                                                    <option>JavaScript</option>
-                                                    <option>Data Visualization</option>
-                                                    <option>Database</option>
-                                                    <option>Back End Development</option>
-                                                    <option>Data Analysis</option>
-                                                    <option>Information Security</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="getInformationQuestion">
-                                            <div class="question-tab">
-                                                <label>Things that should be improved in the future
-                                                    (Check all that apply)</label>
-                                            </div>
-                                            <div class="answer">
-                                                <div><input type="radio" name="suggest"><label>Front-end Projects</label></div>
-                                                <div><input type="radio" name="suggest"><label>Back-end Projects</label></div>
-                                                <div><input type="radio" name="suggest"><label>Data Visualization</label></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </section>
-                        </body>
-                        </html>
+    // Falls es gibt keine Elemente in elements mehr
+    if(next.length === 0){
+        return -2;
+    }
 
+    do{
+        var current_item = next.pop();
+        sortierung.push(current_item);
+        k +=1;
+        order_number[current_item].nachfolger.forEach(function (item){
+        if(order_number[item].number > 1) {
+           order_number[item].number -=1;
+        }else{
+        next.push(item);
+        }
+        })
+        } while (next.length !== 0);
+
+        // Zyklus erkannt
+        if(k !== elements.length + 1){
+            return -1;
+        }
+        return sortierung;
+        }
+
+console.log(topsort(relations1, elements1));
                     </xmp>
-                    <a href=../u2/2.3.2_Checkbox_Trick.html>
+                    <a href=../u4/4.4_TopSort.js>
                         <button>Ergebnis sehen!</button>
                     </a>
                 </div>
                 <hr class="hr-line">
-    </div>
 
     </article>
     </section>

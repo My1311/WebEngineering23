@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 10: TypeScript (TS)</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <!-- extra fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet"/>
+    <!-- styles -->
+    <link rel="stylesheet" href="../u1/L1styles.css" />
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="left-side">
+            <!-- Die Link needs fixing -->
+            <a href="../index.html" class="fas fa-laptop-house" style="font-size:2rem;color:#2196F3"></a>
+        </div>
+        <div class="middle">
+            <h1>KW 42</h1>
+        </div>
+    </div>
+</header>
+<main>
+    <nav>
+        <ul>
+            <li><label for="aufgabe1">Aufgabe 1</label></li>
+            <li><label for="aufgabe2">Aufgabe 2</label></li>
+
+        </ul>
+    </nav>
+    <div class="content">
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe1">
+            <article>
+                <div class ="title">
+                    <h2>10.1 Static classes in TypeScript</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3>Gibt es in TypeScript statische Klassen? </h3>
+                        <h3>Erläutern Sie den Unterschied von TypeScript zu anderen objekt-orientierten,
+                            statisch typisierten Programmiersprachen wie Java und C#.</h3>
+                    </div>
+                    <div class="faq-body">
+                       <p>In TypeScript gibt es keine expliziten statischen Klassen wie in Sprachen wie Java oder C#. <br>
+                           In TypeScript sind Klassen selbst bereits statisch, wenn sie als solche deklariert werden. <br>
+                           Das bedeutet, dass die Methoden und Eigenschaften einer Klasse auf der Klasse selbst definiert sind
+                           und nicht auf Instanzen dieser Klasse.</p>
+
+                        <p>Die Unterschiede von TypeScript zu Java und C# sind:</p>
+                        <p>syntaktischen Unterscheidung zwischen statischen und nicht-statischen Elementen in diesen Sprachen.
+                            In TypeScript gibt es keine explizite Notwendigkeit für das Schlüsselwort static bei der Definition von Methoden oder Eigenschaften einer Klasse,
+                            da alle Klassenmitglieder per Definition statisch sind.</p>
+                        <p>TypeScript ist eine von Microsoft entwickelte Programmiersprache, die auf JavaScript aufbaut und optional statische Typisierung unterstützt.
+                            Java und C# sind vollständig statisch typisierte Sprachen.</p>
+                        <p>TypeScript hat mehr Flexibilität und Dynamik, da es mit dynamisch typisierten JavaScript-Bibliotheken und Frameworks integriert werden kann.
+                            Java und C# hingegen sind  strenger in Bezug auf statische Typisierung und bieten eine striktere Kontrolle über den Typen während der Kompilierung.
+                            In TypeScript haben wir die Möglichkeit, Variablen aus zwei verschiedenen Klassen ,die gleiche strukturiert sind ,
+                            in einer Funktion zu lesen und zu ändern</p>
+
+                    </div>
+                    <hr class="hr-line">
+                </div>
+            </article>
+        </section>
+
+        <section class="questions">
+            <input type ="radio" name="article" id="aufgabe2">
+            <article>
+                <div class ="title">
+                    <h2>10.2 Fehler finden mit TypeScript</h2>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Gegeben sei folgendes fehlerbehaftete JavaScript-Programm. <br>
+                            Ergänzen Sie dieses um möglichst viele Typisierungen und übersetzen Sie es in ein TypeScript-Programm.
+                        </h3>
+                        <pre>
+                            <code>
+const add = (x,y) => x+y;
+const equals = (x,y) => x===y;
+
+console.log( add(1,2) );
+console.log( add(true, true ) );
+console.log( add(true, false ) );
+var x = y = 1;
+console.log( add(equals(x,y), equals(y,x)) );
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="faq-body">
+                        <h4>Meine Lösung</h4>
+                        <xmp>
+TypeScript-Programm:
+
+const add = (x: number, y: number): number => x + y;
+
+const equals = <T>(x: T, y: T): boolean => x === y;
+
+console.log(add(1, 2)); // Ausgabe: 3
+
+console.log(add(true, true)); // TypeScript gibt möglicherweise einen Fehler aus: Argument vom Typ 'boolean' ist nicht zuweisbar zu Parameter vom Typ 'number'
+
+console.log(add(true, false)); // TypeScript gibt möglicherweise einen Fehler aus: Argument vom Typ 'boolean' ist nicht zuweisbar zu Parameter vom Typ 'number'
+
+// Variablen mit Typisierungen
+
+let x: number = 1;
+
+let y: number = 1;
+
+// Hier ist eine mögliche Art, die Typisierung zu korrigieren
+
+// var x = y = 1; wird ersetzt durch: let x: number = 1; let y: number = 1;
+
+ console.log(add(equals(x, y), equals(y, x))); // TypeScript gibt möglicherweise einen Fehler aus: Argument vom Typ 'boolean' ist nicht zuweisbar zu Parameter vom Typ 'number'
+                        </xmp>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Was ist der Fehler im gegebenen JavaScript-Code? Welche Fehler meldet TypeScript?
+                        </h3>
+
+                    </div>
+                    <div class="faq-body">
+                        <h4>Meine Lösung</h4>
+                        <xmp>
+Unzureichende Typisierung:
+
+const add = (x,y) => x+y;
+const equals = (x,y) => x===y;
+
+console.log( add(1,2) ); // Ausgabe: 3
+
+console.log( add(true, true ) ); //  Ausgabe: 2, weil true als 1 umgewandelt wird.
+
+console.log( add(true, false ) );//Ausgabe: 1, weil false als 0 umgewandelt wird.
+
+var x = y = 1; // y ist nicht definiert
+
+console.log( add(equals(x,y), equals(y,x)) ); // Fehler, aber wenn wir var x = 1; var y = 1 definieren, bekommen hier 2
+
+ Bei TypeScript erkennt man solche Fehler:
+
+ // Fehler: Funktion 'add' erwartet number-Typen, aber erhält boolean-Typen
+
+ console.log(add(true, true));
+
+ // Fehler: Argument vom Typ 'boolean' ist nicht zuweisbar zu Parameter vom Typ 'number'
+
+ console.log(add(equals(x, y), equals(y, x)));
+
+ // Möglicherweise unsichtbarer Fehler: y wird global initialisiert, x wird lokal initialisiert
+
+ // In TypeScript würde man 'let' statt 'var' verwenden, um diesen Fehler zu vermeiden
+
+ var x = y = 1;
+                        </xmp>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-page">
+                        <h3> Geben Sie weitere Beispiele an, wie TypeScript bei der Fehlersuche helfen kann.
+                        </h3>
+
+                    </div>
+                    <div class="faq-body">
+                        <h4>Meine Lösung</h4>
+                        <xmp>
+function greet(name: string): string {
+     return "Hello, " + name;
+}
+// Fehler: Argument vom Typ 'null' oder 'undefined' ist nicht zuweisbar zu Parameter vom Typ 'string'
+const result = greet(null);
+                        </xmp>
+                    </div>
+                    <hr class="hr-line">
+                </div>
+
+            </article>
+        </section>
+
+    </div>
+</main>
+<!-- javascript -->
+<script src="../u1/L1script.js"></script>
+
+
+</body>
+</html>
